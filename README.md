@@ -67,7 +67,7 @@ CidadesAPI/ ### Estrutura de pastas
   |  ├── Startup.cs
   |  ├── appsettings.Development.cs
   |  └── appsettings.json ### configurações do aplicativo
-  ├── CidadesAPI.sln
+  ├── CidadesAPI.sln 
   
 ## ⚙️ Executando os testes
 
