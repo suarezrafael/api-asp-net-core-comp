@@ -15,6 +15,7 @@ namespace Cidades.API.Services
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
+        #region CIDADES
         public void AddCidade(Cidade cidade)
         {
             if (cidade == null)
@@ -33,22 +34,6 @@ namespace Cidades.API.Services
             _context.Cidades.Add(cidade);
         }
 
-        public void AddCliente(Guid cidadeId, Cliente cliente)
-        {
-            if (cidadeId == Guid.Empty)
-            {
-                throw new ArgumentNullException(nameof(cidadeId));
-            }
-
-            if (cliente == null)
-            {
-                throw new ArgumentNullException(nameof(cliente));
-            }
-            // sempre seta CidadeId para cidadeId passada
-            cliente.CidadeId = cidadeId;
-            _context.Clientes.Add(cliente);
-        }
-
         public bool CidadeExists(Guid cidadeId)
         {
             if (cidadeId == Guid.Empty)
@@ -57,25 +42,6 @@ namespace Cidades.API.Services
             }
 
             return _context.Cidades.Any(a => a.Id == cidadeId);
-        }
-
-        public void DeleteCliente(Cliente cliente)
-        {
-            _context.Clientes.Remove(cliente);
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                // dispose resources when needed
-            }
         }
 
         public Cidade GetCidade(Guid cidadeId)
@@ -114,6 +80,31 @@ namespace Cidades.API.Services
         public IEnumerable<Cidade> GetCidades(IEnumerable<Guid> cidadeIds)
         {
             throw new NotImplementedException();
+        }
+
+        #endregion CIDADES
+
+        #region CLIENTES
+
+        public void AddCliente(Guid cidadeId, Cliente cliente)
+        {
+            if (cidadeId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(cidadeId));
+            }
+
+            if (cliente == null)
+            {
+                throw new ArgumentNullException(nameof(cliente));
+            }
+            // sempre seta CidadeId para cidadeId passada
+            cliente.CidadeId = cidadeId;
+            _context.Clientes.Add(cliente);
+        }
+
+        public void DeleteCliente(Cliente cliente)
+        {
+            _context.Clientes.Remove(cliente);
         }
 
         public Cliente GetCliente(Guid cidadeId, Guid clienteId)
@@ -160,16 +151,38 @@ namespace Cidades.API.Services
                 .ToList();
         }
 
+        public void UpdateCliente(Cliente cliente)
+        {
+            // sem código nessa implementação
+        }
+
+        #endregion CLIENTES
+
+
+        #region CONTEXTO
+
         public bool Save()
         {
             return (_context.SaveChanges() >= 0);
         }
 
-        public void UpdateCliente(Cliente cliente)
+        /// <summary>
+        /// DISPOSE
+        /// </summary>
+        public void Dispose()
         {
-            // no code in this implementation
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                // dispose resources when needed
+            }
+        }
 
+        #endregion CONTEXTO
     }
 }
