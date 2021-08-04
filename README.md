@@ -51,7 +51,7 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 - 
 ## 📌 Versão
 
-Usei [GitKraken](https://www.gitkraken.com/git-client) para controle de versão. Para as versões disponíveis, observe as [tags neste repositório](https://github.com/suarezrafael/asp-dotnet-core-primeira-api/tags). 
+Usei [GitKraken](https://www.gitkraken.com/git-client) para controle de versão. Para as versões disponíveis, observe as [tags neste repositório](https://github.com/suarezrafael/api-asp-net-core-compasso/tags). 
 
 ## ✒️ Autores
 
