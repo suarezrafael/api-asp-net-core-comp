@@ -1,4 +1,4 @@
-# :alien: API Asp NET Core 3.1 Entity Framework LocalDB
+# :cloud: API Asp NET Core 3.1 Entity Framework LocalDB
 
 Desafio API REST p/ cadastrar:
 
@@ -32,11 +32,10 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 
 ## 🛠️ Construído com
 
- - Visual Studio 2019
  - Carga de trabalho do Visual Studio 2019 Web application 
  - .NET Core 3.1
  - POSTMAN para testar
- - 
+ 
 * [VisualStudio 2019 Community](https://visualstudio.microsoft.com/pt-br/thank-you-downloading-visual-studio/?sku=Community&rel=16) -IDE
 * [POSTMAN Cliente](https://www.postman.com/downloads/) - Platform for API Development
 * [GitKraken](https://www.gitkraken.com/git-client) - maneira mais fácil, segura e poderosa para aproveitar o Git
