@@ -41,6 +41,14 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 * [POSTMAN Cliente](https://www.postman.com/downloads/) - Platform for API Development
 * [GitKraken](https://www.gitkraken.com/git-client) - maneira mais fácil, segura e poderosa para aproveitar o Git
 
+## ⚙️ Executando os testes
+
+- Clone o repositório https://github.com/suarezrafael/api-asp-net-core-compasso.git
+- Abra o arquivo CidadesAPI.sln com o visual Studio 2019.
+- Aguarde a Inicialização do aplicativo. Quando o programa estiver pronto e rodando o navegador irá exibir a mensagem: Done🤓.
+- Abre o programa POSTMAN. Importe para o POSTMAN o arquivo Cidades API.postman_collection.json.
+- Execute as requisições HTTP cadastratadas.
+- 
 ## 📌 Versão
 
 Usei [GitKraken](https://www.gitkraken.com/git-client) para controle de versão. Para as versões disponíveis, observe as [tags neste repositório](https://github.com/suarezrafael/asp-dotnet-core-primeira-api/tags). 
