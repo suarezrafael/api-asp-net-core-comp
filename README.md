@@ -41,37 +41,6 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 * [GitKraken](https://www.gitkraken.com/git-client) - maneira mais fácil, segura e poderosa para aproveitar o Git
 
 
-<<<<<<< HEAD
-
-=======
-CidadesAPI/ ### Estrutura de pastas 
-  ├── Cidades.API
-  |  ├── Controllers
-  |  │   ├── CidadesController.cs
-  |  │   └── ClientesController.cs
-  |  ├── DbContexts
-  |  ├── Entities
-  |  │   ├── Cidade.cs
-  |  │   └── Cliente.cs
-  |  ├── Helpers
-  |  │   ├── _buttons.scss
-  |  │   └── DateTimeOffsetExtension.cs
-  |  ├── Models
-  |  │   ├── CidadeDto.cs
-  |  │   └── ClienteDto.cs
-  |  ├── Profiles
-  |  │   ├── CidadesProfile.cs
-  |  │   └── ClientesProfile.cs
-  |  ├── Services
-  |  ├── Properties
-  |  │   └── lauchSettings.json
-  |  └── Cidades.API.csproj ### arquivo do projeto API Asp NET Core
-  |  ├── Program.cs
-  |  ├── Startup.cs
-  |  ├── appsettings.Development.cs
-  |  └── appsettings.json ### configurações do aplicativo
-  ├── CidadesAPI.sln 
->>>>>>> develop
   
 ## ⚙️ Executando os testes
 
