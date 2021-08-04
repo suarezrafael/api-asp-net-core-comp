@@ -46,7 +46,7 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 - Abra o arquivo CidadesAPI.sln com o visual Studio 2019.
 - Aguarde a Inicialização do aplicativo. Quando o programa estiver pronto e rodando o navegador irá exibir a mensagem: Done🤓.
 - Abre o programa POSTMAN. Importe para o POSTMAN o arquivo Cidades API.postman_collection.json.
-- Execute as requisições HTTP cadastratadas.
+- Execute as requisições HTTP cadastradas.
 - 
 ## 📌 Versão
 
