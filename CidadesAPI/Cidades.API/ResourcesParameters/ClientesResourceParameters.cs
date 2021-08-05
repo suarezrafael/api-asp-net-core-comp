@@ -2,6 +2,6 @@
 {
     public class ClientesResourceParameters
     {
-        public string NomeNomeCompleto { get; set; }        
+        public string NomeCompleto { get; set; }        
     }
 }
