@@ -10,7 +10,17 @@ namespace Cidades.API.Profiles
             CreateMap<Entities.Cliente, Models.ClienteDto>()
              .ForMember(
                 dest => dest.Idade,
-                opt => opt.MapFrom( src => src.DataDeNascimento.GetCurrentAge()));
+                opt => opt.MapFrom( src => src.DataDeNascimento.GetCurrentAge())
+                
+               )
+             .ForMember(
+                dest => dest.Cidade,
+                opt => opt.MapFrom( src => src.Cidade.Nome) 
+                );
+            
+
+            CreateMap<Models.ClienteParaCriacaoDto, Entities.Cliente>();
+            CreateMap<Models.ClienteParaAtualizacaoDto, Entities.Cliente>().ReverseMap();
         }
     }
 }
