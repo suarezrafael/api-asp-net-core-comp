@@ -7,6 +7,8 @@ namespace Cidades.API.Profiles
         public CidadesProfile()
         {
             CreateMap<Entities.Cidade, Models.CidadeDto>();
+
+            CreateMap<Models.CidadeParaCriacaoDto, Entities.Cidade>();
         }
     }
 }

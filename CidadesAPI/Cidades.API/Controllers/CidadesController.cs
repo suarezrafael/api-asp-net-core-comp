@@ -55,5 +55,18 @@ namespace Cidades.API
             return Ok(_mapper.Map<IEnumerable<CidadeDto>>(cidadeEntidade));
         }
 
+        [HttpGet("{cidadeId}", Name = "GetCidade")]
+        public IActionResult GetCidade(Guid cidadeId)
+        {
+            var cidadeEntidade = _apiRepository.GetCidade(cidadeId);
+
+            if (cidadeEntidade == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(_mapper.Map<CidadeDto>(cidadeEntidade));
+        }
+
     }
 }
