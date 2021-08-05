@@ -11,9 +11,6 @@ using System.Collections.Generic;
 namespace Cidades.API.Controllers
 {
 
-    // Revisar com analista se para acessar clientes deve passar por cidades
-    //[Route("api/cidades/{cidadeId}/clientes")]
-
     [ApiController]
     [Route("api/clientes")]
     public class ClientesController : ControllerBase
