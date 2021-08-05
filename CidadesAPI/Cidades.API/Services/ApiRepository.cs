@@ -139,14 +139,15 @@ namespace Cidades.API.Services
         //    throw new NotImplementedException();
         //}
 
-        public IEnumerable<Cliente> GetClientes(string nome)
+        public IEnumerable<Cliente> GetClientes(Guid cidadeId, string nome)
         {
             if (string.IsNullOrEmpty(nome))
             {
                 throw new ArgumentNullException(nameof(nome));
             }
 
-            return _context.Clientes.Where(a => a.NomeCompleto.Contains(nome))
+            return _context.Clientes.Where(a => a.CidadeId == cidadeId && 
+                a.NomeCompleto.Contains(nome))
                 .OrderBy(a => a.NomeCompleto)
                 .ToList();
         }

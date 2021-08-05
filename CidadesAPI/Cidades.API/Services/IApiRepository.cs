@@ -13,7 +13,7 @@ namespace Cidades.API.Services
 
         Cliente GetCliente(Guid cidadeId, Guid clienteId);
         //Consultar cliente pelo nome
-        IEnumerable<Cliente> GetClientes(string nome);
+        IEnumerable<Cliente> GetClientes(Guid cidadeId, string nome);
         //Consultar cliente pelo Id
         Cliente GetCliente(Guid clienteId);
         //Cadastrar cliente
