@@ -2,8 +2,6 @@
 using Cidades.API.ResourcesParameters;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Cidades.API.Services
 {
@@ -32,22 +30,15 @@ namespace Cidades.API.Services
 
 
         #region CLIENTES
-        Cliente GetCliente(Guid cidadeId, Guid clienteId);
 
         //Consultar cliente pelo nome
         IEnumerable<Cliente> GetClientes(ClientesResourceParameters clientesResourceParameters);
 
-        //@@ Revisar com analista se para acessar clientes deve passar por cidades
-        IEnumerable<Cliente> GetClientes(Guid cidadeId, ClientesResourceParameters clientesResourceParameters);
-        
         //Consultar cliente pelo Id
         Cliente GetCliente(Guid clienteId);
 
         //Cadastrar cliente
         void AddCliente(Cliente cliente);
-
-        //@@ Revisar com analista se para acessar clientes deve passar por cidades
-        void AddCliente(Guid cidadeId, Cliente cliente);
 
         //Alterar o nome do cliente
         void UpdateCliente(Cliente cliente);
