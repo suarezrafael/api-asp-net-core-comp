@@ -13,12 +13,13 @@ namespace Cidades.API
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -33,11 +34,10 @@ namespace Cidades.API
 
             services.AddScoped<IApiRepository, ApiRepository>();
 
-            services.AddDbContext<ApiContext>(options =>
-            {
-                // v2, alterar para arquivo de configuração 
-                options.UseSqlServer(
-                    @"Server=(localdb)\mssqllocaldb;Database=ProvaApiDB;Trusted_Connection=True;");
+            var connectionString = this.Configuration["connectionStrings:ApiDBConnectionString"];
+
+            services.AddDbContext<ApiContext>(db => {
+                db.UseSqlServer(connectionString);
             });
         }
 
