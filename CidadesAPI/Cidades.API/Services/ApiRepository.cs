@@ -93,10 +93,6 @@ namespace Cidades.API.Services
 
             return collection.ToList();
         }
-        public IEnumerable<Cidade> GetCidades(IEnumerable<Guid> cidadeIds)
-        {
-            throw new NotImplementedException();
-        }
 
         #endregion CIDADES
 
