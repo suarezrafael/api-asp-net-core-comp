@@ -15,6 +15,7 @@ namespace Cidades.API.Entities
         public string NomeCompleto { get; set; }
 
         [Required]
+        [MaxLength(1)]
         public string Sexo { get; set; }
 
         [Required]
