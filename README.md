@@ -2,17 +2,18 @@
 
 Desafio API REST p/ cadastrar:
 
-- Cadastrar cidade
-- Cadastrar cliente
-- Consultar cidade pelo nome
-- Consultar cidade pelo estado
-- Consultar cliente pelo nome
-- Consultar cliente pelo Id
-- Remover cliente
-- Alterar o nome do cliente
+- (OK) Cadastrar cidade 
+- (OK) Cadastrar cliente 
+- (OK) Consultar cidade pelo nome 
+- (OK) Consultar cidade pelo estado 
+- (OK) Consultar cliente pelo nome
+- (OK) Consultar cliente pelo Id
+- (OK) Remover cliente
+- (  ) Alterar o nome do cliente
+
 - Considere o cadastro com dados básicos:
  - Cidades: nome e estado
- - Cliente: nome completo, sexo, data de nascimento, idade e cidade onde mora.exemplos
+ - Cliente: nome completo, sexo, data de nascimento, idade e cidade onde mora.
 
 ## 🚀 Começando
 
@@ -40,6 +41,8 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 * [POSTMAN Cliente](https://www.postman.com/downloads/) - Platform for API Development
 * [GitKraken](https://www.gitkraken.com/git-client) - maneira mais fácil, segura e poderosa para aproveitar o Git
 
+
+  
 ## ⚙️ Executando os testes
 
 - Clone o repositório https://github.com/suarezrafael/api-asp-net-core-compasso.git
