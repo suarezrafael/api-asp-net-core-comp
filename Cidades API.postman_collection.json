@@ -39,7 +39,7 @@
 			"response": []
 		},
 		{
-			"name": "GET Cidade",
+			"name": "GET Cidade hateoas",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -139,12 +139,12 @@
 			"response": []
 		},
 		{
-			"name": "GET Clientes Por Cidade",
+			"name": "GET Clientes",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:2467/api/cidades/d28888e9-2ba9-473a-a40f-e38cb54f9b35/clientes",
+					"raw": "http://localhost:2467/api/clientes",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -152,8 +152,6 @@
 					"port": "2467",
 					"path": [
 						"api",
-						"cidades",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
 						"clientes"
 					]
 				}
@@ -161,12 +159,18 @@
 			"response": []
 		},
 		{
-			"name": "GET Clientes Por Cidade (unexisting Cidade)",
+			"name": "GET Cliente hateoas",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.marvin.hateoas+json",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "http://localhost:2467/api/cidades/b29e03b5-ba28-4489-8834-689de28af370/clientes",
+					"raw": "http://localhost:2467/api/clientes/d28888e9-2ba9-473a-a40f-e38cb54f9b35",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -174,21 +178,25 @@
 					"port": "2467",
 					"path": [
 						"api",
-						"cidades",
-						"b29e03b5-ba28-4489-8834-689de28af370",
-						"clientes"
+						"clientes",
+						"d28888e9-2ba9-473a-a40f-e38cb54f9b35"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "GET Cliente por Cidade",
+			"name": "GET Cliente (Accept: application/json)",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
 				"url": {
-					"raw": "http://localhost:2467/api/cidades/d28888e9-2ba9-473a-a40f-e38cb54f9b35/courses/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
+					"raw": "http://localhost:2467/api/clientes/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -196,9 +204,7 @@
 					"port": "2467",
 					"path": [
 						"api",
-						"cidades",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-						"courses",
+						"clientes",
 						"5b1c2b4d-48c7-402a-80c3-cc796ad49c6b"
 					]
 				}
@@ -206,12 +212,17 @@
 			"response": []
 		},
 		{
-			"name": "GET Cliente Por Cidade (unexisting Cidade)",
+			"name": "GET Cliente (Accept: application/xml)",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml"
+					}
+				],
 				"url": {
-					"raw": "http://localhost:2467/api/cidades/b29e03b5-ba28-4489-8834-689de28af370/clientes/bc4c35c3-3857-4250-9449-155fcf5109ec",
+					"raw": "http://localhost:2467/api/clientes/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -219,22 +230,20 @@
 					"port": "2467",
 					"path": [
 						"api",
-						"cidades",
-						"b29e03b5-ba28-4489-8834-689de28af370",
 						"clientes",
-						"bc4c35c3-3857-4250-9449-155fcf5109ec"
+						"5b1c2b4d-48c7-402a-80c3-cc796ad49c6b"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "GET Clientes for Cidade (unexisting Cliente)",
+			"name": "GET Cliente (unexisting Cliente)",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:2467/api/cidades/d28888e9-2ba9-473a-a40f-e38cb54f9b35/clientes/8afc4f43-3d02-429b-90c7-1cabe201bf7a",
+					"raw": "http://localhost:2467/api/clientes/a8d15573-ec65-4f48-97d2-2e7c0a726c33",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -242,10 +251,8 @@
 					"port": "2467",
 					"path": [
 						"api",
-						"cidades",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
 						"clientes",
-						"8afc4f43-3d02-429b-90c7-1cabe201bf7a"
+						"a8d15573-ec65-4f48-97d2-2e7c0a726c33"
 					]
 				}
 			},
@@ -354,6 +361,32 @@
 			"response": []
 		},
 		{
+			"name": "GET Filtered Clientes Por Nome",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2467/api/clientes?NomeCompleto=Rafael",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2467",
+					"path": [
+						"api",
+						"clientes"
+					],
+					"query": [
+						{
+							"key": "NomeCompleto",
+							"value": "Rafael"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "POST Cidade",
 			"request": {
 				"method": "POST",
@@ -438,7 +471,7 @@
 					"raw": "{\n\t\"firstName\" : \"Jane\",\n\t\"lastName\" : \"Skewers\",\n\t\"dateOfBirth\" : \"invalid value for DateTimeOffset\",\n\t\"mainCategory\": \"Rum\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:2467/api/cidade",
+					"raw": "http://localhost:2467/api/cidades",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -446,14 +479,14 @@
 					"port": "2467",
 					"path": [
 						"api",
-						"cidade"
+						"cidades"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "POST Course for Author",
+			"name": "POST Cliente",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -468,121 +501,18 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"title\" : \"Top Pirate Hits of Last Decade\",\n\t\"description\" : \"Learn the lyrics and notes to the latest pirate hits\"\n}"
+					"raw": "{\n\t\"nomeCompleto\" : \"Maria de Lurdes\",\n\t\"sexo\" : \"F\",\n    \"dataDeNascimento\" : \"1968-03-04T00:00:00\",\n    \"cidadeId\" : \"d28888e9-2ba9-473a-a40f-e38cb54f9b35\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:51044/api/authors/2902b665-1190-4c70-9915-b9c2d7680450/courses",
+					"raw": "http://localhost:2467/api/clientes",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "51044",
+					"port": "2467",
 					"path": [
 						"api",
-						"authors",
-						"2902b665-1190-4c70-9915-b9c2d7680450",
-						"courses"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "POST Course for Author (unexisting Author)",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"title\" : \"Top Pirate Hits of Last Decade\",\n\t\"description\" : \"Learn the lyrics and notes to the latest pirate hits\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:51044/api/authors/0d75ab75-0028-40c3-8019-1188fe7e790a/courses",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "51044",
-					"path": [
-						"api",
-						"authors",
-						"0d75ab75-0028-40c3-8019-1188fe7e790a",
-						"courses"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "POST Author with Courses",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"firstName\" : \"Jane\",\n\t\"lastName\" : \"Skewers\",\n\t\"dateOfBirth\" : \"1968-03-04T00:00:00\",\n\t\"mainCategory\": \"Rum\",\n\t\"courses\": [\n\t\t{\n\t\t\t\"title\" : \"Drinking Games for Lazy Pirates\",\n\t\t\t\"description\" : \"The best drinking games for pirates that don't like to move their feet unless strictly necessary.\"\n\t\t},\n\t\t{\n\t\t\t\"title\" : \"Rum Degustation 101\",\n\t\t\t\"description\" : \"Learn all about rum degustation, from differences in color, taste and chance of debauchery\"\n\t\t}\n\t\t]\n}"
-				},
-				"url": {
-					"raw": "http://localhost:51044/api/authors",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "51044",
-					"path": [
-						"api",
-						"authors"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "POST Author collection",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "[{\n\t\"firstName\" : \"Jane\",\n\t\"lastName\" : \"Skewers\",\n\t\"dateOfBirth\" : \"1968-03-04T00:00:00\",\n\t\"mainCategory\": \"Rum\"\n},\n{\n\t\"firstName\" : \"Jack\",\n\t\"lastName\" : \"Pepper\",\n\t\"dateOfBirth\" : \"1981-05-03T00:00:00\",\n\t\"mainCategory\": \"Singing\"\n}]"
-				},
-				"url": {
-					"raw": "http://localhost:51044/api/authorcollections",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "51044",
-					"path": [
-						"api",
-						"authorcollections"
+						"clientes"
 					]
 				}
 			},
@@ -623,30 +553,6 @@
 			"response": []
 		},
 		{
-			"name": "OPTIONS Authors",
-			"request": {
-				"method": "OPTIONS",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": []
-				},
-				"url": {
-					"raw": "http://localhost:51044/api/authors",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "51044",
-					"path": [
-						"api",
-						"authors"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "POST Cidade (XML input)",
 			"request": {
 				"method": "POST",
@@ -662,7 +568,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "<CidadeParaCriacaoDto xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.datacontract.org/2004/07/Cidades.API.Models\">\r\n        <Nome>São Francisco de Assis</Nome>  \r\n        <Estado>RS</Estado>        \r\n</CidadeParaCriacaoDto>"
+					"raw": "<CidadeParaCriacaoDto xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.datacontract.org/2004/07/Cidades.API.Models\">\r\n    <Estado>RS</Estado>\r\n    <Nome>Alegrete</Nome>\r\n</CidadeParaCriacaoDto>"
 				},
 				"url": {
 					"raw": "http://localhost:2467/api/cidades",
@@ -695,10 +601,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "<CidadeParaCriacaDto xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.datacontract.org/2004/07/Cidades.API.Models\">\r\n        <Nome>Manoel Viana</Nome>  \r\n        <Estado>RS</Estado>\r\n</AuthorForCreationDto>\r\n"
+					"raw": "<CidadeParaCriacaoDto xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.datacontract.org/2004/07/Cidades.API.Models\">\r\n    <Estado>RS</Estado>\r\n    <Nome>Alegrete</Nome>\r\n</CidadeParaCriacaoDto>\r\n"
 				},
 				"url": {
-					"raw": "http://localhost:2467/api/cidade",
+					"raw": "http://localhost:2467/api/cidades",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -706,14 +612,14 @@
 					"port": "2467",
 					"path": [
 						"api",
-						"cidade"
+						"cidades"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "POST Course for Author (null values)",
+			"name": "POST Cliente (null values)",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -728,27 +634,25 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"title\" : null,\n\t\"description\" : null\n}"
+					"raw": "{\n\t\"nomeCompleto\" : null,\n\t\"sexo\" : null,\n    \"dataDeNascimento\" : null,\n    \"cidadeId\" : null\n}"
 				},
 				"url": {
-					"raw": "http://localhost:51044/api/authors/2902b665-1190-4c70-9915-b9c2d7680450/courses",
+					"raw": "http://localhost:2467/api/clientes",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "51044",
+					"port": "2467",
 					"path": [
 						"api",
-						"authors",
-						"2902b665-1190-4c70-9915-b9c2d7680450",
-						"courses"
+						"clientes"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "POST Course for Author (title == description)",
+			"name": "POST Cliente (long NomeCompleto long Sexo)",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -763,55 +667,18 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"title\" : \"A new course\",\n  \"description\" : \"A new course\"\n}"
+					"raw": "{\n  \"nomeCompleto\": \"Ye black spot cog Spanish Main black jack gabion smartly bilge water list. Execution dock yawl clap of thunder yo-ho-ho case shot poop deck loot hail-shot overhaul. Quarter no prey, no pay bowsprit piracy bucko driver crimp mizzenmast fire in the hole. Stern swing the lead smartly hogshead port jack bilge parley lugger.  Nipper brig tackle Brethren of the Coast crimp rigging lanyard cutlass fluke. Blow the man down lass rutters Sea Legs warp gun splice the main brace ho black spot. Long clothes main sheet Davy Jones' Locker yawl ballast dead men tell no tales run a rig gally bucko. Heave down piracy topgallant snow stern chantey barkadeer weigh anchor mizzenmast.Matey mizzenmast topgallant fire ship tender black jack barque splice the main brace square-rigged. Tackle dance the hempen jig Chain Shot bilge boatswain Yellow Jack league boom aye. Grog sheet code of conduct brig boom scuppers marooned scurvy run a shot across the bow. Swing the lead no prey, no pay blow the man down reef bilged on her anchor bowsprit chase guns spirits lad. Pillage me Jack Ketch bounty schooner Pieces of Eight ballast execution dock poop deck. Scourge of the seven seas spanker run a shot across the bow boatswain Yellow Jack knave case shot measured fer yer chains six pounders. Gangway topgallant keelhaul haul wind barque cog galleon lookout Chain Shot. Execution dock Yellow Jack hang the jib lass Cat o'nine tails keelhaul list galleon long clothes. Swab provost chase guns lookout coxswain Arr spike Plate Fleet cackle fruit. Gunwalls ahoy chase tender tack bilge rat salmagundi lugger skysail. Avast ye quarter gaff lass holystone overhaul topmast skysail. Privateer gabion barque bilge rigging pillage Arr bowsprit heave down.\",\n  \"Sexo\": \"Ye black spot cog Spanish Main black jack gabion smartly bilge water list. Execution dock yawl clap of thunder yo-ho-ho case shot poop deck loot hail-shot overhaul. Quarter no prey, no pay bowsprit piracy bucko driver crimp mizzenmast fire in the hole. Stern swing the lead smartly hogshead port jack bilge parley lugger.  Nipper brig tackle Brethren of the Coast crimp rigging lanyard cutlass fluke. Blow the man down lass rutters Sea Legs warp gun splice the main brace ho black spot. Long clothes main sheet Davy Jones' Locker yawl ballast dead men tell no tales run a rig gally bucko. Heave down piracy topgallant snow stern chantey barkadeer weigh anchor mizzenmast.Matey mizzenmast topgallant fire ship tender black jack barque splice the main brace square-rigged. Tackle dance the hempen jig Chain Shot bilge boatswain Yellow Jack league boom aye. Grog sheet code of conduct brig boom scuppers marooned scurvy run a shot across the bow. Swing the lead no prey, no pay blow the man down reef bilged on her anchor bowsprit chase guns spirits lad. Pillage me Jack Ketch bounty schooner Pieces of Eight ballast execution dock poop deck. Scourge of the seven seas spanker run a shot across the bow boatswain Yellow Jack knave case shot measured fer yer chains six pounders. Gangway topgallant keelhaul haul wind barque cog galleon lookout Chain Shot. Execution dock Yellow Jack hang the jib lass Cat o'nine tails keelhaul list galleon long clothes. Swab provost chase guns lookout coxswain Arr spike Plate Fleet cackle fruit. Gunwalls ahoy chase tender tack bilge rat salmagundi lugger skysail. Avast ye quarter gaff lass holystone overhaul topmast skysail. Privateer gabion barque bilge rigging pillage Arr bowsprit heave down.\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:51044/api/authors/2902b665-1190-4c70-9915-b9c2d7680450/courses",
+					"raw": "http://localhost:2467/api/clientes",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "51044",
+					"port": "2467",
 					"path": [
 						"api",
-						"authors",
-						"2902b665-1190-4c70-9915-b9c2d7680450",
-						"courses"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "POST Course for Author (long title == long description)",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"title\": \"Ye black spot cog Spanish Main black jack gabion smartly bilge water list. Execution dock yawl clap of thunder yo-ho-ho case shot poop deck loot hail-shot overhaul. Quarter no prey, no pay bowsprit piracy bucko driver crimp mizzenmast fire in the hole. Stern swing the lead smartly hogshead port jack bilge parley lugger.  Nipper brig tackle Brethren of the Coast crimp rigging lanyard cutlass fluke. Blow the man down lass rutters Sea Legs warp gun splice the main brace ho black spot. Long clothes main sheet Davy Jones' Locker yawl ballast dead men tell no tales run a rig gally bucko. Heave down piracy topgallant snow stern chantey barkadeer weigh anchor mizzenmast.Matey mizzenmast topgallant fire ship tender black jack barque splice the main brace square-rigged. Tackle dance the hempen jig Chain Shot bilge boatswain Yellow Jack league boom aye. Grog sheet code of conduct brig boom scuppers marooned scurvy run a shot across the bow. Swing the lead no prey, no pay blow the man down reef bilged on her anchor bowsprit chase guns spirits lad. Pillage me Jack Ketch bounty schooner Pieces of Eight ballast execution dock poop deck. Scourge of the seven seas spanker run a shot across the bow boatswain Yellow Jack knave case shot measured fer yer chains six pounders. Gangway topgallant keelhaul haul wind barque cog galleon lookout Chain Shot. Execution dock Yellow Jack hang the jib lass Cat o'nine tails keelhaul list galleon long clothes. Swab provost chase guns lookout coxswain Arr spike Plate Fleet cackle fruit. Gunwalls ahoy chase tender tack bilge rat salmagundi lugger skysail. Avast ye quarter gaff lass holystone overhaul topmast skysail. Privateer gabion barque bilge rigging pillage Arr bowsprit heave down.\",\n  \"description\": \"Ye black spot cog Spanish Main black jack gabion smartly bilge water list. Execution dock yawl clap of thunder yo-ho-ho case shot poop deck loot hail-shot overhaul. Quarter no prey, no pay bowsprit piracy bucko driver crimp mizzenmast fire in the hole. Stern swing the lead smartly hogshead port jack bilge parley lugger.  Nipper brig tackle Brethren of the Coast crimp rigging lanyard cutlass fluke. Blow the man down lass rutters Sea Legs warp gun splice the main brace ho black spot. Long clothes main sheet Davy Jones' Locker yawl ballast dead men tell no tales run a rig gally bucko. Heave down piracy topgallant snow stern chantey barkadeer weigh anchor mizzenmast.Matey mizzenmast topgallant fire ship tender black jack barque splice the main brace square-rigged. Tackle dance the hempen jig Chain Shot bilge boatswain Yellow Jack league boom aye. Grog sheet code of conduct brig boom scuppers marooned scurvy run a shot across the bow. Swing the lead no prey, no pay blow the man down reef bilged on her anchor bowsprit chase guns spirits lad. Pillage me Jack Ketch bounty schooner Pieces of Eight ballast execution dock poop deck. Scourge of the seven seas spanker run a shot across the bow boatswain Yellow Jack knave case shot measured fer yer chains six pounders. Gangway topgallant keelhaul haul wind barque cog galleon lookout Chain Shot. Execution dock Yellow Jack hang the jib lass Cat o'nine tails keelhaul list galleon long clothes. Swab provost chase guns lookout coxswain Arr spike Plate Fleet cackle fruit. Gunwalls ahoy chase tender tack bilge rat salmagundi lugger skysail. Avast ye quarter gaff lass holystone overhaul topmast skysail. Privateer gabion barque bilge rigging pillage Arr bowsprit heave down.\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:51044/api/authors/2902b665-1190-4c70-9915-b9c2d7680450/courses",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "51044",
-					"path": [
-						"api",
-						"authors",
-						"2902b665-1190-4c70-9915-b9c2d7680450",
-						"courses"
+						"clientes"
 					]
 				}
 			},
@@ -1106,7 +973,7 @@
 			"response": []
 		},
 		{
-			"name": "PATCH Course for Author",
+			"name": "PATCH Clientes",
 			"request": {
 				"method": "PATCH",
 				"header": [
@@ -1121,20 +988,18 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n    {\n      \"op\": \"replace\",\n      \"path\": \"/title\",\n      \"value\": \"Updated title\"\n    }\n]"
+					"raw": "[\n    {\n      \"op\": \"replace\",\n      \"path\": \"/nomecompleto\",\n      \"value\": \"Nome Atualizado\"\n    }\n]"
 				},
 				"url": {
-					"raw": "http://localhost:51044/api/authors/d28888e9-2ba9-473a-a40f-e38cb54f9b35/courses/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
+					"raw": "http://localhost:2467/api/clientes/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "51044",
+					"port": "2467",
 					"path": [
 						"api",
-						"authors",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-						"courses",
+						"clientes",
 						"5b1c2b4d-48c7-402a-80c3-cc796ad49c6b"
 					]
 				}
@@ -1142,7 +1007,7 @@
 			"response": []
 		},
 		{
-			"name": "PATCH Course for Author (multiple)",
+			"name": "PATCH Cliente (multiple)",
 			"request": {
 				"method": "PATCH",
 				"header": [
@@ -1157,20 +1022,18 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n    {\n      \"op\": \"replace\",\n      \"path\": \"/title\",\n      \"value\": \"Another updated title\"\n    },\n    {\n      \"op\": \"replace\",\n      \"path\": \"/description\",\n      \"value\": \"Updated description\"\n    }\n]"
+					"raw": "[\n    {\n      \"op\": \"replace\",\n      \"path\": \"/nomecompleto\",\n      \"value\": \"Outro Nome Alterado\"\n    },\n    {\n      \"op\": \"replace\",\n      \"path\": \"/sexo\",\n      \"value\": \"F\"\n    }\n]"
 				},
 				"url": {
-					"raw": "http://localhost:51044/api/authors/d28888e9-2ba9-473a-a40f-e38cb54f9b35/courses/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
+					"raw": "http://localhost:2467/api/clientes/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "51044",
+					"port": "2467",
 					"path": [
 						"api",
-						"authors",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-						"courses",
+						"clientes",
 						"5b1c2b4d-48c7-402a-80c3-cc796ad49c6b"
 					]
 				}
@@ -1466,7 +1329,7 @@
 			"response": []
 		},
 		{
-			"name": "DELETE Course for Author",
+			"name": "DELETE Cliente",
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -1475,17 +1338,15 @@
 					"formdata": []
 				},
 				"url": {
-					"raw": "http://localhost:51044/api/authors/d28888e9-2ba9-473a-a40f-e38cb54f9b35/courses/d8663e5e-7494-4f81-8739-6e0de1bea7ee",
+					"raw": "http://localhost:2467/api/clientes/d8663e5e-7494-4f81-8739-6e0de1bea7ee",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "51044",
+					"port": "2467",
 					"path": [
 						"api",
-						"authors",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-						"courses",
+						"clientes",
 						"d8663e5e-7494-4f81-8739-6e0de1bea7ee"
 					]
 				}
@@ -1493,7 +1354,7 @@
 			"response": []
 		},
 		{
-			"name": "DELETE Course for Author (unexisting Author)",
+			"name": "DELETE Cliente (unexisting Cliente)",
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -1502,70 +1363,16 @@
 					"formdata": []
 				},
 				"url": {
-					"raw": "http://localhost:51044/api/authors/787f6625-6048-43d7-b64e-bf3d02f0132d/courses/70a1f9b9-0a37-4c1a-99b1-c7709fc64167",
+					"raw": "http://localhost:2467/api/clientes/3f946dbe-edf3-4c44-baef-b683bc355a0f",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "51044",
+					"port": "2467",
 					"path": [
 						"api",
-						"authors",
-						"787f6625-6048-43d7-b64e-bf3d02f0132d",
-						"courses",
-						"70a1f9b9-0a37-4c1a-99b1-c7709fc64167"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "DELETE Course for Author (unexisting Course)",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": []
-				},
-				"url": {
-					"raw": "http://localhost:51044/api/authors/d28888e9-2ba9-473a-a40f-e38cb54f9b35/courses/3f946dbe-edf3-4c44-baef-b683bc355a0f",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "51044",
-					"path": [
-						"api",
-						"authors",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-						"courses",
+						"clientes",
 						"3f946dbe-edf3-4c44-baef-b683bc355a0f"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "DELETE Author",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": []
-				},
-				"url": {
-					"raw": "http://localhost:51044/api/authors/d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "51044",
-					"path": [
-						"api",
-						"authors",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35"
 					]
 				}
 			},
