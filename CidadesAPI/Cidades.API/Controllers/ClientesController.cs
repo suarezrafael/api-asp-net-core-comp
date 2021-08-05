@@ -7,7 +7,7 @@ using System;
 namespace Cidades.API.Controllers
 {
     [ApiController]
-    [Route("api/cidades")]
+    [Route("api/cidades/{cidadeId}/clientes")]
     public class ClientesController : ControllerBase
     {
         private readonly ILogger<ClientesController> _logger;
