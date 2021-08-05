@@ -87,6 +87,7 @@ namespace Cidades.API.Controllers
         {
             try
             {
+                //throw new Exception("Teste Exception 123.");
                 var clienteEntidade = _apiRepository.GetCliente(clienteId);
 
                 if (clienteEntidade == null)
