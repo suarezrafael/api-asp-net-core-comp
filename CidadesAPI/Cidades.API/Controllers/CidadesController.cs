@@ -47,7 +47,8 @@ namespace Cidades.API
         //Consultar cidade pelo nome
         //Consultar cidade pelo estado
 
-        [HttpGet()]
+        [HttpGet]
+        [HttpHead]
         public ActionResult<IEnumerable<CidadeDto>> GetCidades(
             [FromQuery] CidadesResourceParameters cidadesResourceParameters)
         {
