@@ -55,6 +55,7 @@ namespace Cidades.API
             return Ok(_mapper.Map<IEnumerable<CidadeDto>>(cidadeEntidade));
         }
 
+        // Usado para retorno de CreatedAtRoute em CreateCidade
         [HttpGet("{cidadeId}", Name = "GetCidade")]
         public IActionResult GetCidade(Guid cidadeId)
         {
