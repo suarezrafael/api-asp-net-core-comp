@@ -1,6 +1,7 @@
 ﻿using Cidades.API.DbContexts;
 using Cidades.API.Entities;
 using Cidades.API.ResourcesParameters;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,29 +61,8 @@ namespace Cidades.API.Services
             return _context.Cidades.ToList<Cidade>();
         }
 
-        public IEnumerable<Cidade> GetCidades(string nome)
-        {
-            if (string.IsNullOrEmpty(nome))
-            {
-                throw new ArgumentNullException(nameof(nome));
-            }
-
-            return _context.Cidades.Where(a => a.Nome.Contains(nome));
-        }
-
-        public IEnumerable<Cidade> GetCidadesPorEstado(string estado)
-        {
-
-            if (string.IsNullOrEmpty(estado))
-            {
-                throw new ArgumentNullException(nameof(estado));
-            }
-
-            return _context.Cidades.Where(a => a.Estado.Contains(estado))
-                .OrderBy(a => a.Nome)
-                .ToList();
-        }
-
+        //Consultar cidade pelo nome
+        //Consultar cidade pelo estado
         public IEnumerable<Cidade> GetCidades(CidadesResourceParameters cidadesResourceParameters)
         {
             if (cidadesResourceParameters == null)
@@ -120,8 +100,22 @@ namespace Cidades.API.Services
 
         #endregion CIDADES
 
+
+
+
+
         #region CLIENTES
 
+        public void AddCliente(Cliente cliente)
+        {
+            if (cliente == null)
+            {
+                throw new ArgumentNullException(nameof(cliente));
+            }
+            _context.Clientes.Add(cliente);
+        }
+
+        //@@ Revisar com analista se para acessar clientes deve passar por cidades
         public void AddCliente(Guid cidadeId, Cliente cliente)
         {
             if (cidadeId == Guid.Empty)
@@ -143,6 +137,18 @@ namespace Cidades.API.Services
             _context.Clientes.Remove(cliente);
         }
 
+        public Cliente GetCliente(Guid clienteId)
+        {
+            if (clienteId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(clienteId));
+            }
+
+            return _context.Clientes.Include( c => c.Cidade)
+              .Where(c => c.Id == clienteId).FirstOrDefault();
+        }
+
+        //@@ Revisar com analista se para acessar clientes deve passar por cidades
         public Cliente GetCliente(Guid cidadeId, Guid clienteId)
         {
             if (cidadeId == Guid.Empty)
@@ -159,22 +165,36 @@ namespace Cidades.API.Services
               .Where(c => c.CidadeId == cidadeId && c.Id == clienteId).FirstOrDefault();
         }
 
-        public Cliente GetCliente(Guid clienteId)
+        public IEnumerable<Cliente> GetClientes(ClientesResourceParameters clientesResourceParameters)
         {
-            if (clienteId == Guid.Empty)
+            if (clientesResourceParameters == null)
             {
-                throw new ArgumentNullException(nameof(clienteId));
+                throw new ArgumentNullException(nameof(clientesResourceParameters));
             }
 
-            return _context.Clientes
-              .Where(c => c.Id == clienteId).FirstOrDefault();
+            var nomeCompleto = "";
+
+            var collection = _context.Clientes.Include(c => c.Cidade) as IQueryable<Cliente>;
+
+            if (!string.IsNullOrWhiteSpace(clientesResourceParameters.NomeNomeCompleto))
+            {
+                nomeCompleto = clientesResourceParameters.NomeNomeCompleto.Trim();
+                collection = collection.Where(a => a.NomeCompleto.Contains(nomeCompleto));
+            }
+
+            
+            return collection.ToList();
         }
 
-        //public IEnumerable<Cliente> GetClientes(Guid cidadeId)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public IEnumerable<Cliente> GetClientes()
+        {
+            return _context.Clientes.ToList<Cliente>();
+        }
 
+        public IEnumerable<Cliente> GetClientes(Guid cidadeId, ClientesResourceParameters clientesResourceParameters)
+        {
+            throw new NotImplementedException();
+        }
         public IEnumerable<Cliente> GetClientes(Guid cidadeId, string nome)
         {
             if (string.IsNullOrEmpty(nome))
@@ -192,6 +212,7 @@ namespace Cidades.API.Services
         {
             // sem código nessa implementação
         }
+
 
         #endregion CLIENTES
 
