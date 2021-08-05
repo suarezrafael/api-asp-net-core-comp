@@ -1,4 +1,5 @@
 ﻿using Cidades.API.Entities;
+using Cidades.API.ResourcesParameters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,7 @@ namespace Cidades.API.Services
         //Consultar cidade pelo estado
         IEnumerable<Cidade> GetCidadesPorEstado(string estado);
         IEnumerable<Cidade> GetCidades(IEnumerable<Guid> cidadeIds);
+        IEnumerable<Cidade> GetCidades(CidadesResourceParameters cidadesResourceParameters);
         //Cadastrar cidade
         void AddCidade(Cidade cidade);
         bool CidadeExists(Guid cidadeId);

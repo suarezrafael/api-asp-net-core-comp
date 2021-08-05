@@ -1,5 +1,6 @@
 ﻿using Cidades.API.DbContexts;
 using Cidades.API.Entities;
+using Cidades.API.ResourcesParameters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,6 +55,11 @@ namespace Cidades.API.Services
             return _context.Cidades.FirstOrDefault(a => a.Id == cidadeId);
         }
 
+        public IEnumerable<Cidade> GetCidades()
+        {
+            return _context.Cidades.ToList<Cidade>();
+        }
+
         public IEnumerable<Cidade> GetCidades(string nome)
         {
             if (string.IsNullOrEmpty(nome))
@@ -77,6 +83,36 @@ namespace Cidades.API.Services
                 .ToList();
         }
 
+        public IEnumerable<Cidade> GetCidades(CidadesResourceParameters cidadesResourceParameters)
+        {
+            if (cidadesResourceParameters == null)
+            {
+                throw new ArgumentNullException(nameof(cidadesResourceParameters));
+            }
+
+            if (string.IsNullOrWhiteSpace(cidadesResourceParameters.Nome) && 
+                string.IsNullOrWhiteSpace(cidadesResourceParameters.Estado))
+            {
+                return GetCidades();
+            }
+
+            var collection = _context.Cidades as IQueryable<Cidade>;
+
+            if (!string.IsNullOrWhiteSpace(cidadesResourceParameters.Nome))
+            {
+                var nome = cidadesResourceParameters.Nome.Trim();
+                collection = collection.Where(a => a.Nome == nome);
+            }
+
+            if (!string.IsNullOrWhiteSpace(cidadesResourceParameters.Estado))
+            {
+
+                var estado = cidadesResourceParameters.Estado.Trim();
+                collection = collection.Where(a => a.Estado.Contains(estado) );
+            }
+
+            return collection.ToList();
+        }
         public IEnumerable<Cidade> GetCidades(IEnumerable<Guid> cidadeIds)
         {
             throw new NotImplementedException();

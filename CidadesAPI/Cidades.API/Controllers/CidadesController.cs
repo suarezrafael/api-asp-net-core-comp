@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Cidades.API.Models;
+using Cidades.API.ResourcesParameters;
 using Cidades.API.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -30,28 +31,29 @@ namespace Cidades.API
         }
 
         //Cadastrar cidade
+        [HttpPost]
+        public ActionResult<CidadeDto> CreateCidade(CidadeParaCriacaoDto cidade)
+        {
+            var cidadeEntidade = _mapper.Map<Entities.Cidade>(cidade);
+            _apiRepository.AddCidade(cidadeEntidade);
+            _apiRepository.Save();
+
+            var cidadeParaRetorno = _mapper.Map<CidadeDto>(cidadeEntidade);
+            return CreatedAtRoute("GetCidade",
+                new { cidadeId = cidadeParaRetorno.Id },
+                cidadeParaRetorno);
+        }
+
         //Consultar cidade pelo nome
         //Consultar cidade pelo estado
 
-        [HttpGet("{cidadeId}")]
-        public IActionResult GetCidade(Guid cidadeId)
+        [HttpGet()]
+        public ActionResult<IEnumerable<CidadeDto>> GetCidades(
+            [FromQuery] CidadesResourceParameters cidadesResourceParameters)
         {
-            var cidade = _apiRepository.GetCidade(cidadeId);
-
-            if (cidade == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(_mapper.Map<CidadeDto>(cidade));
+            var cidadeEntidade = _apiRepository.GetCidades(cidadesResourceParameters);
+            return Ok(_mapper.Map<IEnumerable<CidadeDto>>(cidadeEntidade));
         }
 
-        [HttpGet("{nome}")]
-        public IActionResult GetCidades(string nome)
-        {
-            var cidadesEntidade = _apiRepository.GetCidades(nome);
-
-            return Ok(_mapper.Map<IEnumerable<CidadeDto>>(cidadesEntidade));
-        }
     }
 }
