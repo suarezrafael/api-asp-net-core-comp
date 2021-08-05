@@ -48,7 +48,7 @@ namespace Cidades.API.Controllers
 
         //Consultar cliente pelo Id
         [HttpGet("{clienteId}")]
-        public ActionResult<ClienteDto> GetCourseForAuthor(Guid cidadeId, Guid clienteId)
+        public ActionResult<ClienteDto> GetCliente(Guid cidadeId, Guid clienteId)
         {
             if (!_apiRepository.CidadeExists(cidadeId))
             {
