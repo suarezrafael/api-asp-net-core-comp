@@ -21,7 +21,7 @@ namespace Cidades.API.Controllers
         private readonly ILogger<ClientesController> _logger;
         private readonly IApiRepository _apiRepository;
         private readonly IMapper _mapper;
-        
+
         public ClientesController(ILogger<ClientesController> logger, IApiRepository apiRepository,
             IMapper mapper)
         {
@@ -37,21 +37,30 @@ namespace Cidades.API.Controllers
 
         //Cadastrar cliente
         [HttpPost]
-        public ActionResult<ClienteDto> Createcliente(ClienteParaCriacaoDto cliente)
+        public ActionResult<ClienteDto> CreateCliente(ClienteParaCriacaoDto cliente)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                var clienteEntidade = _mapper.Map<Entities.Cliente>(cliente);
+                _apiRepository.AddCliente(clienteEntidade);
+                _apiRepository.Save();
+
+                var clienteParaRetorno = _mapper.Map<ClienteDto>(clienteEntidade);
+
+                return CreatedAtRoute("GetCliente",
+                    new { clienteId = clienteParaRetorno.Id },
+                    clienteParaRetorno);
             }
-
-            var clienteEntidade = _mapper.Map<Entities.Cliente>(cliente);
-            _apiRepository.AddCliente(clienteEntidade);
-            _apiRepository.Save();
-
-            var clienteParaRetorno = _mapper.Map<ClienteDto>(clienteEntidade);
-            return CreatedAtRoute("GetCliente",
-                new { clienteId = clienteParaRetorno.Id },
-                clienteParaRetorno);
+            catch (Exception ex)
+            {
+                _logger.LogCritical($"CreateCliente: Exceção ao cadastrar cliente com os seguintes parametros:  {cliente.ToString()}", ex);
+                return StatusCode(500, "Ocorreu um problema ao lidar com sua solicitação.");
+            }
         }
 
         //Consultar cliente pelo nome
@@ -60,23 +69,38 @@ namespace Cidades.API.Controllers
         public ActionResult<IEnumerable<ClienteDto>> GetClientes(
             [FromQuery] ClientesResourceParameters clientesResourceParameters)
         {
-            var clientesEntidade = _apiRepository.GetClientes(clientesResourceParameters);
-            return Ok(_mapper.Map<IEnumerable<ClienteDto>>(clientesEntidade));
+            try
+            {
+                var clientesEntidade = _apiRepository.GetClientes(clientesResourceParameters);
+                return Ok(_mapper.Map<IEnumerable<ClienteDto>>(clientesEntidade));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogCritical($"GetClientes: Exceção ao consultar cliente com os seguintes parametros:  {clientesResourceParameters.ToString()}", ex);
+                return StatusCode(500, "Ocorreu um problema ao lidar com sua solicitação.");
+            }
         }
-
 
         //Consultar cliente pelo Id
         [HttpGet("{clienteId}", Name = "GetCliente")]
         public IActionResult GetCliente(Guid clienteId)
         {
-            var clienteEntidade = _apiRepository.GetCliente(clienteId);
-
-            if (clienteEntidade == null)
+            try
             {
-                return NotFound();
-            }
+                var clienteEntidade = _apiRepository.GetCliente(clienteId);
 
-            return Ok(_mapper.Map<ClienteDto>(clienteEntidade));
+                if (clienteEntidade == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(_mapper.Map<ClienteDto>(clienteEntidade));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogCritical($"GetCliente: Exceção ao consultar cliente com seguinte id:  {clienteId}", ex);
+                return StatusCode(500, "Ocorreu um problema ao lidar com sua solicitação.");
+            }
         }
 
 
@@ -84,57 +108,72 @@ namespace Cidades.API.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteCliente(Guid id)
         {
-
-            var clienteEntidade = _apiRepository
+            try
+            {
+                var clienteEntidade = _apiRepository
                 .GetCliente(id);
 
-            if (clienteEntidade == null)
-            {
-                return NotFound();
+                if (clienteEntidade == null)
+                {
+                    return NotFound();
+                }
+
+                _apiRepository.DeleteCliente(clienteEntidade);
+
+                _apiRepository.Save();
+
+                return NoContent();
             }
-
-            _apiRepository.DeleteCliente(clienteEntidade);
-
-            _apiRepository.Save();
-
-            return NoContent();
+            catch (Exception ex)
+            {
+                _logger.LogCritical($"DeleteCliente: Exceção ao excluir cliente com seguinte id:  {id}", ex);
+                return StatusCode(500, "Ocorreu um problema ao lidar com sua solicitação.");
+            }
         }
 
 
         //Alterar o nome do cliente
         [HttpPatch("{id}")]
-        public IActionResult UpdateCliente(Guid id, 
-            [FromBody]JsonPatchDocument<ClienteParaAtualizacaoDto> patchDoc)
+        public IActionResult UpdateCliente(Guid id,
+            [FromBody] JsonPatchDocument<ClienteParaAtualizacaoDto> patchDoc)
         {
-            var clienteEntidade = _apiRepository
+            try
+            {
+                var clienteEntidade = _apiRepository
                 .GetCliente(id);
 
-            if (clienteEntidade == null)
-            {
-                return NotFound();
+                if (clienteEntidade == null)
+                {
+                    return NotFound();
+                }
+
+                var clientePatch = _mapper.Map<ClienteParaAtualizacaoDto>(clienteEntidade);
+
+                patchDoc.ApplyTo(clientePatch);
+
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                if (!TryValidateModel(clientePatch))
+                {
+                    return BadRequest(ModelState);
+                }
+
+                _mapper.Map(clientePatch, clienteEntidade);
+
+                _apiRepository.UpdateCliente(clienteEntidade);
+
+                _apiRepository.Save();
+
+                return NoContent();
             }
-
-            var clientePatch = _mapper.Map<ClienteParaAtualizacaoDto>(clienteEntidade);
-
-            patchDoc.ApplyTo(clientePatch);
-            
-            if (!ModelState.IsValid)
+            catch (Exception ex)
             {
-                return BadRequest(ModelState);
+                _logger.LogCritical($"UpdateCliente: Exceção ao atualizar cliente com seguinte id:  {id}", ex);
+                return StatusCode(500, "Ocorreu um problema ao lidar com sua solicitação.");
             }
-
-            if (!TryValidateModel(clientePatch))
-            {
-                return BadRequest(ModelState);
-            }
-
-            _mapper.Map(clientePatch, clienteEntidade);
-
-            _apiRepository.UpdateCliente(clienteEntidade);
-
-            _apiRepository.Save();
-
-            return NoContent();
         }
 
     }

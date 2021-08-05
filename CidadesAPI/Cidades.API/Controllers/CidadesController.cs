@@ -34,14 +34,26 @@ namespace Cidades.API
         [HttpPost]
         public ActionResult<CidadeDto> CreateCidade(CidadeParaCriacaoDto cidade)
         {
-            var cidadeEntidade = _mapper.Map<Entities.Cidade>(cidade);
-            _apiRepository.AddCidade(cidadeEntidade);
-            _apiRepository.Save();
+            try
+            {
+                var cidadeEntidade = _mapper.Map<Entities.Cidade>(cidade);
 
-            var cidadeParaRetorno = _mapper.Map<CidadeDto>(cidadeEntidade);
-            return CreatedAtRoute("GetCidade",
-                new { cidadeId = cidadeParaRetorno.Id },
-                cidadeParaRetorno);
+                _apiRepository.AddCidade(cidadeEntidade);
+
+                _apiRepository.Save();
+
+                var cidadeParaRetorno = _mapper.Map<CidadeDto>(cidadeEntidade);
+
+                return CreatedAtRoute("GetCidade",
+                    new { cidadeId = cidadeParaRetorno.Id },
+                    cidadeParaRetorno);
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogCritical($"Exceção ao cadastrar cidade com nome {cidade.Nome}", ex);
+                return StatusCode(500, "Ocorreu um problema ao lidar com sua solicitação.");
+            }
         }
 
         //Consultar cidade pelo nome
@@ -52,22 +64,39 @@ namespace Cidades.API
         public ActionResult<IEnumerable<CidadeDto>> GetCidades(
             [FromQuery] CidadesResourceParameters cidadesResourceParameters)
         {
-            var cidadeEntidade = _apiRepository.GetCidades(cidadesResourceParameters);
-            return Ok(_mapper.Map<IEnumerable<CidadeDto>>(cidadeEntidade));
+            try
+            {
+                var cidadeEntidade = _apiRepository.GetCidades(cidadesResourceParameters);
+                return Ok(_mapper.Map<IEnumerable<CidadeDto>>(cidadeEntidade));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogCritical($"Exceção ao consultar cidade com os parametros: {cidadesResourceParameters.ToString()}", ex);
+                return StatusCode(500, "Ocorreu um problema ao lidar com sua solicitação.");
+            }
         }
 
         // Usado para retorno de CreatedAtRoute em CreateCidade
         [HttpGet("{cidadeId}", Name = "GetCidade")]
         public IActionResult GetCidade(Guid cidadeId)
         {
-            var cidadeEntidade = _apiRepository.GetCidade(cidadeId);
-
-            if (cidadeEntidade == null)
+            try
             {
-                return NotFound();
-            }
+                var cidadeEntidade = _apiRepository.GetCidade(cidadeId);
 
-            return Ok(_mapper.Map<CidadeDto>(cidadeEntidade));
+                if (cidadeEntidade == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(_mapper.Map<CidadeDto>(cidadeEntidade));
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogCritical($"Exceção ao consultar cidade com o id: {cidadeId}", ex);
+                return StatusCode(500, "Ocorreu um problema ao lidar com sua solicitação.");
+            }
         }
 
     }
