@@ -115,23 +115,6 @@ namespace Cidades.API.Services
             _context.Clientes.Add(cliente);
         }
 
-        //@@ Revisar com analista se para acessar clientes deve passar por cidades
-        public void AddCliente(Guid cidadeId, Cliente cliente)
-        {
-            if (cidadeId == Guid.Empty)
-            {
-                throw new ArgumentNullException(nameof(cidadeId));
-            }
-
-            if (cliente == null)
-            {
-                throw new ArgumentNullException(nameof(cliente));
-            }
-            // sempre seta CidadeId para cidadeId passada
-            cliente.CidadeId = cidadeId;
-            _context.Clientes.Add(cliente);
-        }
-
         public void DeleteCliente(Cliente cliente)
         {
             _context.Clientes.Remove(cliente);
@@ -148,23 +131,6 @@ namespace Cidades.API.Services
               .Where(c => c.Id == clienteId).FirstOrDefault();
         }
 
-        //@@ Revisar com analista se para acessar clientes deve passar por cidades
-        public Cliente GetCliente(Guid cidadeId, Guid clienteId)
-        {
-            if (cidadeId == Guid.Empty)
-            {
-                throw new ArgumentNullException(nameof(cidadeId));
-            }
-
-            if (clienteId == Guid.Empty)
-            {
-                throw new ArgumentNullException(nameof(clienteId));
-            }
-
-            return _context.Clientes
-              .Where(c => c.CidadeId == cidadeId && c.Id == clienteId).FirstOrDefault();
-        }
-
         public IEnumerable<Cliente> GetClientes(ClientesResourceParameters clientesResourceParameters)
         {
             if (clientesResourceParameters == null)
@@ -176,12 +142,11 @@ namespace Cidades.API.Services
 
             var collection = _context.Clientes.Include(c => c.Cidade) as IQueryable<Cliente>;
 
-            if (!string.IsNullOrWhiteSpace(clientesResourceParameters.NomeNomeCompleto))
+            if (!string.IsNullOrWhiteSpace(clientesResourceParameters.NomeCompleto))
             {
-                nomeCompleto = clientesResourceParameters.NomeNomeCompleto.Trim();
+                nomeCompleto = clientesResourceParameters.NomeCompleto.Trim();
                 collection = collection.Where(a => a.NomeCompleto.Contains(nomeCompleto));
             }
-
             
             return collection.ToList();
         }
@@ -191,10 +156,6 @@ namespace Cidades.API.Services
             return _context.Clientes.ToList<Cliente>();
         }
 
-        public IEnumerable<Cliente> GetClientes(Guid cidadeId, ClientesResourceParameters clientesResourceParameters)
-        {
-            throw new NotImplementedException();
-        }
         public IEnumerable<Cliente> GetClientes(Guid cidadeId, string nome)
         {
             if (string.IsNullOrEmpty(nome))
@@ -224,9 +185,6 @@ namespace Cidades.API.Services
             return (_context.SaveChanges() >= 0);
         }
 
-        /// <summary>
-        /// DISPOSE
-        /// </summary>
         public void Dispose()
         {
             Dispose(true);
@@ -237,7 +195,7 @@ namespace Cidades.API.Services
         {
             if (disposing)
             {
-                // dispose resources when needed
+                // descartar recursos quando necessário
             }
         }
 
