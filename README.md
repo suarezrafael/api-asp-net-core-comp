@@ -47,10 +47,11 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 
 - Clone o repositório https://github.com/suarezrafael/api-asp-net-core-compasso.git
 - Abra o arquivo CidadesAPI.sln com o visual Studio 2019.
-- Aguarde a Inicialização do aplicativo. Quando o programa estiver pronto e rodando o navegador irá exibir a mensagem: Done🤓.
-- Abre o programa POSTMAN. Importe para o POSTMAN o arquivo Cidades API.postman_collection.json.
+- Aguarde a Inicialização do aplicativo. Quando o programa estiver pronto e rodando o navegador irá exibir a página https://localhost:<porta>/swagger/index.html 🤓.
+- Para acessar os exemplos em json. Abra o programa POSTMAN. Importe para o POSTMAN o arquivo Cidades API.postman_collection.json.
 - Execute as requisições HTTP cadastradas.
-- 
+- Voce pode executar as requisições tanto no POSTMAN como na própria página do swagger.
+
 ## 📌 Versão
 
 Usei [GitKraken](https://www.gitkraken.com/git-client) para controle de versão. Para as versões disponíveis, observe as [tags neste repositório](https://github.com/suarezrafael/api-asp-net-core-compasso/tags). 

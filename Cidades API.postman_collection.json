@@ -17,12 +17,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:2467/api/cidades",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/cidades",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"cidades"
@@ -50,12 +50,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:2467/api/cidades/d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/cidades/d28888e9-2ba9-473a-a40f-e38cb54f9b35",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"cidades",
@@ -71,12 +71,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:2467/api/cidades/a8d15573-ec65-4f48-97d2-2e7c0a726c33",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/cidades/a8d15573-ec65-4f48-97d2-2e7c0a726c33",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"cidades",
@@ -97,12 +97,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:2467/api/cidades/d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/cidades/d28888e9-2ba9-473a-a40f-e38cb54f9b35",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"cidades",
@@ -123,12 +123,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:2467/api/cidades/d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/cidades/d28888e9-2ba9-473a-a40f-e38cb54f9b35",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"cidades",
@@ -144,15 +144,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:2467/api/clientes",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/cidades",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
-						"clientes"
+						"cidades"
 					]
 				}
 			},
@@ -170,15 +170,15 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:2467/api/clientes/d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/cidades/d28888e9-2ba9-473a-a40f-e38cb54f9b35",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
-						"clientes",
+						"cidades",
 						"d28888e9-2ba9-473a-a40f-e38cb54f9b35"
 					]
 				}
@@ -196,15 +196,15 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:2467/api/clientes/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/cidades/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
-						"clientes",
+						"cidades",
 						"5b1c2b4d-48c7-402a-80c3-cc796ad49c6b"
 					]
 				}
@@ -222,15 +222,15 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:2467/api/clientes/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/cidades/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
-						"clientes",
+						"cidades",
 						"5b1c2b4d-48c7-402a-80c3-cc796ad49c6b"
 					]
 				}
@@ -243,15 +243,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:2467/api/clientes/a8d15573-ec65-4f48-97d2-2e7c0a726c33",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/cidades/a8d15573-ec65-4f48-97d2-2e7c0a726c33",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
-						"clientes",
+						"cidades",
 						"a8d15573-ec65-4f48-97d2-2e7c0a726c33"
 					]
 				}
@@ -264,12 +264,12 @@
 				"method": "HEAD",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:2467/api/cidades",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/cidades",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"cidades"
@@ -284,12 +284,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:2467/api/cidades?Nome=Alegrete",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/cidades?Nome=Alegrete",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"cidades"
@@ -310,12 +310,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:2467/api/cidades?Estado=RS",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/cidades?Estado=RS",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"cidades"
@@ -336,12 +336,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:2467/api/cidades?Nome=Alegrete&Estado=RS",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/cidades?Nome=Alegrete&Estado=RS",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"cidades"
@@ -366,15 +366,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:2467/api/clientes?NomeCompleto=Rafael",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/cidades?NomeCompleto=Rafael",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
-						"clientes"
+						"cidades"
 					],
 					"query": [
 						{
@@ -405,12 +405,12 @@
 					"raw": "{\n\t\"Nome\" : \"Cachoeira do Sul\",\n\t\"Estado\" : \"RS\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:2467/api/cidades",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/cidades",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"cidades"
@@ -438,12 +438,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:2467/api/cidades",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/cidades",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"cidades"
@@ -471,12 +471,12 @@
 					"raw": "{\n\t\"firstName\" : \"Jane\",\n\t\"lastName\" : \"Skewers\",\n\t\"dateOfBirth\" : \"invalid value for DateTimeOffset\",\n\t\"mainCategory\": \"Rum\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:2467/api/cidades",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/cidades",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"cidades"
@@ -504,12 +504,12 @@
 					"raw": "{\n\t\"nomeCompleto\" : \"Maria de Lurdes\",\n\t\"sexo\" : \"F\",\n    \"dataDeNascimento\" : \"1968-03-04T00:00:00\",\n    \"cidadeId\" : \"d28888e9-2ba9-473a-a40f-e38cb54f9b35\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:2467/api/clientes",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/clientes",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"clientes"
@@ -519,7 +519,7 @@
 			"response": []
 		},
 		{
-			"name": "POST Author to single resource URI",
+			"name": "POST Cidade to single resource URI",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -534,18 +534,18 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"firstName\" : \"Jane\",\n\t\"lastName\" : \"Skewers\",\n\t\"dateOfBirth\" : \"1968-03-04T00:00:00\",\n\t\"mainCategory\": \"Rum\"\n}"
+					"raw": "{\n\t\"Nome\" : \"Cachoeira do Sul\",\n\t\"Estado\" : \"RS\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:51044/api/authors/25141d83-4584-4487-a306-0441695d8e24",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/cidades/25141d83-4584-4487-a306-0441695d8e24",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "51044",
+					"port": "44302",
 					"path": [
 						"api",
-						"authors",
+						"cidades",
 						"25141d83-4584-4487-a306-0441695d8e24"
 					]
 				}
@@ -571,12 +571,12 @@
 					"raw": "<CidadeParaCriacaoDto xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.datacontract.org/2004/07/Cidades.API.Models\">\r\n    <Estado>RS</Estado>\r\n    <Nome>Alegrete</Nome>\r\n</CidadeParaCriacaoDto>"
 				},
 				"url": {
-					"raw": "http://localhost:2467/api/cidades",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/cidades",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"cidades"
@@ -604,12 +604,12 @@
 					"raw": "<CidadeParaCriacaoDto xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.datacontract.org/2004/07/Cidades.API.Models\">\r\n    <Estado>RS</Estado>\r\n    <Nome>Alegrete</Nome>\r\n</CidadeParaCriacaoDto>\r\n"
 				},
 				"url": {
-					"raw": "http://localhost:2467/api/cidades",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/cidades",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"cidades"
@@ -637,12 +637,12 @@
 					"raw": "{\n\t\"nomeCompleto\" : null,\n\t\"sexo\" : null,\n    \"dataDeNascimento\" : null,\n    \"cidadeId\" : null\n}"
 				},
 				"url": {
-					"raw": "http://localhost:2467/api/clientes",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/clientes",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"clientes"
@@ -670,12 +670,12 @@
 					"raw": "{\n  \"nomeCompleto\": \"Ye black spot cog Spanish Main black jack gabion smartly bilge water list. Execution dock yawl clap of thunder yo-ho-ho case shot poop deck loot hail-shot overhaul. Quarter no prey, no pay bowsprit piracy bucko driver crimp mizzenmast fire in the hole. Stern swing the lead smartly hogshead port jack bilge parley lugger.  Nipper brig tackle Brethren of the Coast crimp rigging lanyard cutlass fluke. Blow the man down lass rutters Sea Legs warp gun splice the main brace ho black spot. Long clothes main sheet Davy Jones' Locker yawl ballast dead men tell no tales run a rig gally bucko. Heave down piracy topgallant snow stern chantey barkadeer weigh anchor mizzenmast.Matey mizzenmast topgallant fire ship tender black jack barque splice the main brace square-rigged. Tackle dance the hempen jig Chain Shot bilge boatswain Yellow Jack league boom aye. Grog sheet code of conduct brig boom scuppers marooned scurvy run a shot across the bow. Swing the lead no prey, no pay blow the man down reef bilged on her anchor bowsprit chase guns spirits lad. Pillage me Jack Ketch bounty schooner Pieces of Eight ballast execution dock poop deck. Scourge of the seven seas spanker run a shot across the bow boatswain Yellow Jack knave case shot measured fer yer chains six pounders. Gangway topgallant keelhaul haul wind barque cog galleon lookout Chain Shot. Execution dock Yellow Jack hang the jib lass Cat o'nine tails keelhaul list galleon long clothes. Swab provost chase guns lookout coxswain Arr spike Plate Fleet cackle fruit. Gunwalls ahoy chase tender tack bilge rat salmagundi lugger skysail. Avast ye quarter gaff lass holystone overhaul topmast skysail. Privateer gabion barque bilge rigging pillage Arr bowsprit heave down.\",\n  \"Sexo\": \"Ye black spot cog Spanish Main black jack gabion smartly bilge water list. Execution dock yawl clap of thunder yo-ho-ho case shot poop deck loot hail-shot overhaul. Quarter no prey, no pay bowsprit piracy bucko driver crimp mizzenmast fire in the hole. Stern swing the lead smartly hogshead port jack bilge parley lugger.  Nipper brig tackle Brethren of the Coast crimp rigging lanyard cutlass fluke. Blow the man down lass rutters Sea Legs warp gun splice the main brace ho black spot. Long clothes main sheet Davy Jones' Locker yawl ballast dead men tell no tales run a rig gally bucko. Heave down piracy topgallant snow stern chantey barkadeer weigh anchor mizzenmast.Matey mizzenmast topgallant fire ship tender black jack barque splice the main brace square-rigged. Tackle dance the hempen jig Chain Shot bilge boatswain Yellow Jack league boom aye. Grog sheet code of conduct brig boom scuppers marooned scurvy run a shot across the bow. Swing the lead no prey, no pay blow the man down reef bilged on her anchor bowsprit chase guns spirits lad. Pillage me Jack Ketch bounty schooner Pieces of Eight ballast execution dock poop deck. Scourge of the seven seas spanker run a shot across the bow boatswain Yellow Jack knave case shot measured fer yer chains six pounders. Gangway topgallant keelhaul haul wind barque cog galleon lookout Chain Shot. Execution dock Yellow Jack hang the jib lass Cat o'nine tails keelhaul list galleon long clothes. Swab provost chase guns lookout coxswain Arr spike Plate Fleet cackle fruit. Gunwalls ahoy chase tender tack bilge rat salmagundi lugger skysail. Avast ye quarter gaff lass holystone overhaul topmast skysail. Privateer gabion barque bilge rigging pillage Arr bowsprit heave down.\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:2467/api/clientes",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/clientes",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"clientes"
@@ -1041,7 +1041,7 @@
 			"response": []
 		},
 		{
-			"name": "PATCH Course for Author (remove)",
+			"name": "PATCH Cliente (remove)",
 			"request": {
 				"method": "PATCH",
 				"header": [
@@ -1056,20 +1056,18 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n    {\n      \"op\": \"remove\",\n      \"path\": \"/description\"\n    }\n]"
+					"raw": "[\n    {\n      \"op\": \"remove\",\n      \"path\": \"/nomecompleto\"\n    }\n]"
 				},
 				"url": {
-					"raw": "http://localhost:51044/api/authors/d28888e9-2ba9-473a-a40f-e38cb54f9b35/courses/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
+					"raw": "http://localhost:2467/api/clientes/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "51044",
+					"port": "2467",
 					"path": [
 						"api",
-						"authors",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-						"courses",
+						"clientes",
 						"5b1c2b4d-48c7-402a-80c3-cc796ad49c6b"
 					]
 				}
@@ -1077,7 +1075,7 @@
 			"response": []
 		},
 		{
-			"name": "PATCH Course for Author (copy and add)",
+			"name": "PATCH Cliente (copy and add)",
 			"request": {
 				"method": "PATCH",
 				"header": [
@@ -1092,20 +1090,18 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n    {\n      \"op\": \"add\",\n      \"path\": \"/description\",\n      \"value\": \"New description\"\n    },\n    {\n      \"op\": \"copy\",\n      \"from\": \"/description\",\n      \"path\": \"/title\"\n    }\n]"
+					"raw": "[\n    {\n      \"op\": \"add\",\n      \"path\": \"/nomecompleto\",\n      \"value\": \"Novo nome\"\n    },\n    {\n      \"op\": \"copy\",\n      \"from\": \"/sexo\",\n      \"path\": \"/nomecompleto\"\n    }\n]"
 				},
 				"url": {
-					"raw": "http://localhost:51044/api/authors/d28888e9-2ba9-473a-a40f-e38cb54f9b35/courses/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
+					"raw": "http://localhost:24/api/clientes/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "51044",
+					"port": "24",
 					"path": [
 						"api",
-						"authors",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-						"courses",
+						"clientes",
 						"5b1c2b4d-48c7-402a-80c3-cc796ad49c6b"
 					]
 				}
@@ -1113,43 +1109,7 @@
 			"response": []
 		},
 		{
-			"name": "PATCH Course for Author (unexisting author)",
-			"request": {
-				"method": "PATCH",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json-patch+json"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "[\n    {\n      \"op\": \"replace\",\n      \"path\": \"/title\",\n      \"value\": \"Updated title\"\n    }\n]"
-				},
-				"url": {
-					"raw": "http://localhost:51044/api/authors/b94975d9-b640-40d4-ac11-9eb2ed1c66dc/courses/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "51044",
-					"path": [
-						"api",
-						"authors",
-						"b94975d9-b640-40d4-ac11-9eb2ed1c66dc",
-						"courses",
-						"5b1c2b4d-48c7-402a-80c3-cc796ad49c6b"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PATCH Course for Author (unexisting course)",
+			"name": "PATCH Cliente (unexisting cliente)",
 			"request": {
 				"method": "PATCH",
 				"header": [
@@ -1167,17 +1127,15 @@
 					"raw": "[\n    {\n      \"op\": \"replace\",\n      \"path\": \"/title\",\n      \"value\": \"Updated title\"\n    },\n    {\n      \"op\": \"replace\",\n      \"path\": \"/description\",\n      \"value\": \"Updated description\"\n    }\n]"
 				},
 				"url": {
-					"raw": "http://localhost:51044/api/authors/d28888e9-2ba9-473a-a40f-e38cb54f9b35/courses/ea6d127c-de97-4ee5-b259-220dc314896c",
+					"raw": "http://localhost:2467/api/clientes/ea6d127c-de97-4ee5-b259-220dc314896c",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "51044",
+					"port": "2467",
 					"path": [
 						"api",
-						"authors",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-						"courses",
+						"clientes",
 						"ea6d127c-de97-4ee5-b259-220dc314896c"
 					]
 				}
@@ -1185,7 +1143,7 @@
 			"response": []
 		},
 		{
-			"name": "PATCH Course for Author (remove description)",
+			"name": "PATCH Cliente (remove sexo)",
 			"request": {
 				"method": "PATCH",
 				"header": [
@@ -1200,10 +1158,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n    {\n      \"op\": \"remove\",\n      \"path\": \"/description\"\n    }\n]"
+					"raw": "[\n    {\n      \"op\": \"remove\",\n      \"path\": \"/sexo\"\n    }\n]"
 				},
 				"url": {
-					"raw": "http://localhost:51044/api/authors/d28888e9-2ba9-473a-a40f-e38cb54f9b35/courses/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
+					"raw": "http://localhost:51044/api/clientes/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -1211,9 +1169,7 @@
 					"port": "51044",
 					"path": [
 						"api",
-						"authors",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-						"courses",
+						"clientes",
 						"5b1c2b4d-48c7-402a-80c3-cc796ad49c6b"
 					]
 				}
@@ -1221,7 +1177,7 @@
 			"response": []
 		},
 		{
-			"name": "PATCH Course for Author (remove unexisting property)",
+			"name": "PATCH Cliente (remove unexisting property)",
 			"request": {
 				"method": "PATCH",
 				"header": [
@@ -1236,20 +1192,18 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n    {\n      \"op\": \"remove\",\n      \"path\": \"/thisdoesnotexist\"\n    }\n]"
+					"raw": "[\n    {\n      \"op\": \"remove\",\n      \"path\": \"/issonaoexiste\"\n    }\n]"
 				},
 				"url": {
-					"raw": "http://localhost:51044/api/authors/d28888e9-2ba9-473a-a40f-e38cb54f9b35/courses/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
+					"raw": "http://localhost:2467/api/clientes/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "51044",
+					"port": "2467",
 					"path": [
 						"api",
-						"authors",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-						"courses",
+						"clientes",
 						"5b1c2b4d-48c7-402a-80c3-cc796ad49c6b"
 					]
 				}
@@ -1257,7 +1211,7 @@
 			"response": []
 		},
 		{
-			"name": "PATCH Course for Author (UPSERT - no title)",
+			"name": "PATCH Cliente (UPSERT - no title)",
 			"request": {
 				"method": "PATCH",
 				"header": [
@@ -1272,20 +1226,18 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n    {\n      \"op\": \"replace\",\n      \"path\": \"/description\",\n      \"value\": \"Updated description\"\n    }\n]"
+					"raw": "[\n    {\n      \"op\": \"replace\",\n      \"path\": \"/nomecompleto\",\n      \"value\": \"Rafael Vieira Suarez ATUALIZADO\"\n    }\n]"
 				},
 				"url": {
-					"raw": "http://localhost:51044/api/authors/d28888e9-2ba9-473a-a40f-e38cb54f9b35/courses/75bf303e-6dc4-4b00-81fd-f896a6379f5f",
+					"raw": "http://localhost:2467/api/clientes/75bf303e-6dc4-4b00-81fd-f896a6379f5f",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "51044",
+					"port": "2467",
 					"path": [
 						"api",
-						"authors",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-						"courses",
+						"clientes",
 						"75bf303e-6dc4-4b00-81fd-f896a6379f5f"
 					]
 				}
@@ -1293,7 +1245,7 @@
 			"response": []
 		},
 		{
-			"name": "PATCH Course for Author (UPSERT - remove unexisting property)",
+			"name": "PATCH Cliente (UPSERT - remove unexisting property)",
 			"request": {
 				"method": "PATCH",
 				"header": [
@@ -1308,20 +1260,18 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n    {\n      \"op\": \"add\",\n      \"path\": \"/thisdoesnotexist\",\n      \"value\": \"new value\"\n    }\n]"
+					"raw": "[\n    {\n      \"op\": \"add\",\n      \"path\": \"/issonaoeiste\",\n      \"value\": \"novo valor\"\n    }\n]"
 				},
 				"url": {
-					"raw": "http://localhost:51044/api/authors/d28888e9-2ba9-473a-a40f-e38cb54f9b35/courses/75bf303e-6dc4-4b00-81fd-f896a6379f5f",
+					"raw": "http://localhost:2467/api/clientes/75bf303e-6dc4-4b00-81fd-f896a6379f5f",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "51044",
+					"port": "2467",
 					"path": [
 						"api",
-						"authors",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-						"courses",
+						"clientes",
 						"75bf303e-6dc4-4b00-81fd-f896a6379f5f"
 					]
 				}
