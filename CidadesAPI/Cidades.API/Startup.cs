@@ -27,25 +27,6 @@ namespace Cidades.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers(setupAction =>
-            {
-                setupAction.ReturnHttpNotAcceptable = true;
-
-            }).AddXmlDataContractSerializerFormatters();
-
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
-            services.AddScoped<IApiRepository, ApiRepository>();
-
-            var connectionString = this.Configuration["connectionStrings:ApiDBConnectionString"];
-
-            services.AddDbContext<ApiContext>(db => {
-                db.UseSqlServer(connectionString);
-            });
-
-            
-
-            // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
@@ -63,6 +44,27 @@ namespace Cidades.API
                 });
 
             });
+
+            services.AddControllers(setupAction =>
+            {
+                setupAction.ReturnHttpNotAcceptable = true;
+
+            }).AddXmlDataContractSerializerFormatters();
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            services.AddScoped<IApiRepository, ApiRepository>();
+
+            var connectionString = this.Configuration["connectionStrings:ApiDBConnectionString"];
+
+            services.AddDbContext<ApiContext>(db => {
+                db.UseSqlServer(connectionString);
+            });
+
+
+            //services.AddSwaggerGen();
+           // Register the Swagger generator, defining 1 or more Swagger documents
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -85,11 +87,18 @@ namespace Cidades.API
             app.UseHttpsRedirection();
 
             app.UseSwagger();
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger(c =>
+            {
+                c.SerializeAsV2 = true;
+            });
+
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("../swagger/v1/swagger.json", "My API V1");
             });
             
             app.UseRouting();
