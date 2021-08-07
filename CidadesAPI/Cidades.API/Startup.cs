@@ -39,6 +39,8 @@ namespace Cidades.API
             services.AddDbContext<ApiContext>(db => {
                 db.UseSqlServer(connectionString);
             });
+
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,6 +65,8 @@ namespace Cidades.API
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSwagger();
 
             app.UseEndpoints(endpoints =>
             {
