@@ -10,8 +10,6 @@ using System.Collections.Generic;
 
 namespace Cidades.API.Controllers
 {
-
-
     [ApiController]
     [Route("api/clientes")]
     public class ClientesController : ControllerBase
@@ -33,7 +31,11 @@ namespace Cidades.API.Controllers
                 throw new ArgumentNullException(nameof(mapper));
         }
 
-        //Cadastrar cliente
+        /// <summary>
+        /// Cadastrar um novo cliente
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult<ClienteDto> CreateCliente(ClienteParaCriacaoDto cliente)
         {
@@ -61,7 +63,11 @@ namespace Cidades.API.Controllers
             }
         }
 
-        //Consultar cliente pelo nome
+        /// <summary>
+        /// Consultar um cliente pelo Nome parcial
+        /// </summary>
+        /// <param name="clientesResourceParameters"></param>
+        /// <returns></returns>
         [HttpGet]
         [HttpHead]
         public ActionResult<IEnumerable<ClienteDto>> GetClientes(
@@ -79,7 +85,11 @@ namespace Cidades.API.Controllers
             }
         }
 
-        //Consultar cliente pelo Id
+        /// <summary>
+        /// Consultar um cliente específico pelo ID
+        /// </summary>
+        /// <param name="clienteId"></param>
+        /// <returns></returns>
         [HttpGet("{clienteId}", Name = "GetCliente")]
         public IActionResult GetCliente(Guid clienteId)
         {
@@ -103,7 +113,11 @@ namespace Cidades.API.Controllers
         }
 
 
-        //Remover cliente
+        /// <summary>
+        /// Excluir um Cliente específico
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult DeleteCliente(Guid id)
         {
@@ -131,7 +145,12 @@ namespace Cidades.API.Controllers
         }
 
 
-        //Alterar o nome do cliente
+        /// <summary>
+        /// Alterar parcialmente um cliente específico
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="patchDoc"></param>
+        /// <returns></returns>
         [HttpPatch("{id}")]
         public IActionResult UpdateCliente(Guid id,
             [FromBody] JsonPatchDocument<ClienteParaAtualizacaoDto> patchDoc)

@@ -7,7 +7,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using System;
+using System.IO;
+using System.Reflection;
 
 namespace Cidades.API
 {
@@ -40,7 +43,26 @@ namespace Cidades.API
                 db.UseSqlServer(connectionString);
             });
 
-            services.AddSwaggerGen();
+            
+
+            // Register the Swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Cidades Compasso API",
+                    Description = "API Asp NET Core 3.1 Entity Framework LocalDB",
+                    TermsOfService = new Uri("https://github.com/suarezrafael/api-asp-net-core-compasso"),
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Rafael Vieira Suarez",
+                        Email = "rafael.suarez@compasso.com.br",
+                        Url = new Uri("https://about.me/rafael.suarez"),
+                    }
+                });
+
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
