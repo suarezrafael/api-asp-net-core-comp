@@ -30,7 +30,11 @@ namespace Cidades.API
                 throw new ArgumentNullException(nameof(mapper));
         }
 
-        //Cadastrar cidade
+        /// <summary>
+        /// Cadastrar uma cidade que contêm Nome(string 100) e Estado(string 2)
+        /// </summary>
+        /// <param name="cidade"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult<CidadeDto> CreateCidade(CidadeParaCriacaoDto cidade)
         {
@@ -58,7 +62,11 @@ namespace Cidades.API
 
         //Consultar cidade pelo nome
         //Consultar cidade pelo estado
-
+        /// <summary>
+        /// Consultar uma lista de cidades pelo nome ou pelo estado ou ambos
+        /// </summary>
+        /// <param name="cidadesResourceParameters"></param>
+        /// <returns></returns>
         [HttpGet]
         [HttpHead]
         public ActionResult<IEnumerable<CidadeDto>> GetCidades(
@@ -77,6 +85,11 @@ namespace Cidades.API
         }
 
         // Usado para retorno de CreatedAtRoute em CreateCidade
+        /// <summary>
+        /// Consultar uma cidade específica pelo ID
+        /// </summary>
+        /// <param name="cidadeId"></param>
+        /// <returns></returns>
         [HttpGet("{cidadeId}", Name = "GetCidade")]
         public IActionResult GetCidade(Guid cidadeId)
         {
