@@ -3,6 +3,8 @@ using Cidades.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,25 +29,6 @@ namespace Cidades.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers(setupAction =>
-            {
-                setupAction.ReturnHttpNotAcceptable = true;
-
-            }).AddXmlDataContractSerializerFormatters();
-
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
-            services.AddScoped<IApiRepository, ApiRepository>();
-
-            var connectionString = this.Configuration["connectionStrings:ApiDBConnectionString"];
-
-            services.AddDbContext<ApiContext>(db => {
-                db.UseSqlServer(connectionString);
-            });
-
-            
-
-            // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
@@ -63,6 +46,71 @@ namespace Cidades.API
                 });
 
             });
+
+            services.AddControllers(setupAction =>
+            {
+                setupAction.ReturnHttpNotAcceptable = true;
+
+            }).AddXmlDataContractSerializerFormatters()
+            .ConfigureApiBehaviorOptions(setupAction =>
+            {
+                setupAction.InvalidModelStateResponseFactory = context =>
+                {
+                    // cria um objeto de detalhes do problema
+                    var problemDetailsFactory = context.HttpContext.RequestServices
+                        .GetRequiredService<ProblemDetailsFactory>();
+                    var problemDetails = problemDetailsFactory.CreateValidationProblemDetails(
+                            context.HttpContext,
+                            context.ModelState);
+
+                    // adiciona informações adicionais com colocadas por padrão 
+                    problemDetails.Detail = "Verifique o campo de erros para mais detalhes.";
+                    problemDetails.Instance = context.HttpContext.Request.Path;
+
+                    // procura o codigo de status para usar
+                    var actionExecutingContext =
+                          context as Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext;
+
+                    // se o model state esta com e 
+                    // lidando com eerro de validação
+                    if ((context.ModelState.ErrorCount > 0) &&
+                        (actionExecutingContext?.ActionArguments.Count == context.ActionDescriptor.Parameters.Count))
+                    {
+                        problemDetails.Type = "https://cidadesapi.com/modelvalidationproblem";
+                        problemDetails.Status = StatusCodes.Status422UnprocessableEntity;
+                        problemDetails.Title = "Um ou mais erros de validação ocorreram.";
+
+                        return new UnprocessableEntityObjectResult(problemDetails)
+                        {
+                            ContentTypes = { "application/problem+json" }
+                        };
+                    }
+
+                    // if one of the keys wasn't correctly found / couldn't be parsed
+                    // we're dealing with null/unparsable input
+                    problemDetails.Status = StatusCodes.Status400BadRequest;
+                    problemDetails.Title = "One or more errors on input occurred.";
+                    return new BadRequestObjectResult(problemDetails)
+                    {
+                        ContentTypes = { "application/problem+json" }
+                    };
+                };
+            }); 
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            services.AddScoped<IApiRepository, ApiRepository>();
+
+            var connectionString = this.Configuration["connectionStrings:ApiDBConnectionString"];
+
+            services.AddDbContext<ApiContext>(db => {
+                db.UseSqlServer(connectionString);
+            });
+
+
+            //services.AddSwaggerGen();
+           // Register the Swagger generator, defining 1 or more Swagger documents
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -85,11 +133,18 @@ namespace Cidades.API
             app.UseHttpsRedirection();
 
             app.UseSwagger();
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger(c =>
+            {
+                c.SerializeAsV2 = true;
+            });
+
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("../swagger/v1/swagger.json", "My API V1");
             });
             
             app.UseRouting();
