@@ -9,7 +9,7 @@ Desafio API REST p/ cadastrar:
 - (OK) Consultar cliente pelo nome
 - (OK) Consultar cliente pelo Id
 - (OK) Remover cliente
-- (  ) Alterar o nome do cliente
+- (OK) Alterar o nome do cliente - Foi corrigida a instalação do ASpnetCore.Mvc.NewtonsoftJson 
 
 - Considere o cadastro com dados básicos:
  - Cidades: nome e estado
