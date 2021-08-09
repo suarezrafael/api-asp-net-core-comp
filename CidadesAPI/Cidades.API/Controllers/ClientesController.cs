@@ -167,16 +167,11 @@ namespace Cidades.API.Controllers
 
                 var clientePatch = _mapper.Map<ClienteParaAtualizacaoDto>(clienteEntidade);
 
-                patchDoc.ApplyTo(clientePatch);
-
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
+                patchDoc.ApplyTo(clientePatch,ModelState);
 
                 if (!TryValidateModel(clientePatch))
                 {
-                    return BadRequest(ModelState);
+                    return ValidationProblem(ModelState);
                 }
 
                 _mapper.Map(clientePatch, clienteEntidade);
