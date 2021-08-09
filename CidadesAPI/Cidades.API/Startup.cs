@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.IO;
 using System.Reflection;
@@ -52,6 +53,9 @@ namespace Cidades.API
                 setupAction.ReturnHttpNotAcceptable = true;
 
             }).AddXmlDataContractSerializerFormatters()
+            .AddNewtonsoftJson(setupAction => {
+                setupAction.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            })
             .ConfigureApiBehaviorOptions(setupAction =>
             {
                 setupAction.InvalidModelStateResponseFactory = context =>
@@ -71,8 +75,8 @@ namespace Cidades.API
                     var actionExecutingContext =
                           context as Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext;
 
-                    // se o model state esta com e 
-                    // lidando com eerro de validação
+                    // se o model state esta sem erro 
+                    // lidando com erro de validação
                     if ((context.ModelState.ErrorCount > 0) &&
                         (actionExecutingContext?.ActionArguments.Count == context.ActionDescriptor.Parameters.Count))
                     {
@@ -86,10 +90,10 @@ namespace Cidades.API
                         };
                     }
 
-                    // if one of the keys wasn't correctly found / couldn't be parsed
-                    // we're dealing with null/unparsable input
+                    // se uma das chaves não foi encontrada corretamente / não pôde ser analisada
+                    // estamos lidando com entrada nula / não analisável
                     problemDetails.Status = StatusCodes.Status400BadRequest;
-                    problemDetails.Title = "One or more errors on input occurred.";
+                    problemDetails.Title = "Um ou mais erros de entrada ocorreram.";
                     return new BadRequestObjectResult(problemDetails)
                     {
                         ContentTypes = { "application/problem+json" }
