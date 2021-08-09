@@ -86,10 +86,10 @@ namespace Cidades.API
                         };
                     }
 
-                    // if one of the keys wasn't correctly found / couldn't be parsed
-                    // we're dealing with null/unparsable input
+                    // se uma das chaves não foi encontrada corretamente / não pôde ser analisada
+                    // estamos lidando com entrada nula / não analisável
                     problemDetails.Status = StatusCodes.Status400BadRequest;
-                    problemDetails.Title = "One or more errors on input occurred.";
+                    problemDetails.Title = "Um ou mais erros de entrada ocorreram.";
                     return new BadRequestObjectResult(problemDetails)
                     {
                         ContentTypes = { "application/problem+json" }
