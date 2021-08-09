@@ -685,294 +685,6 @@
 			"response": []
 		},
 		{
-			"name": "PUT Course for Author",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"title\": \"Updated title\",\n  \"description\": \"Updated description\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:51044/api/authors/d28888e9-2ba9-473a-a40f-e38cb54f9b35/courses/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "51044",
-					"path": [
-						"api",
-						"authors",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-						"courses",
-						"5b1c2b4d-48c7-402a-80c3-cc796ad49c6b"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PUT Course for Author (with ids)",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"title\": \"Updated title - Test with both ids\",\n  \"description\": \"Updated description - Test with both ids\",\n  \"id\": \"e57b605f-8b3c-4089-b672-6ce9e6d6c23f\",\n  \"authorId\": \"f74d6899-9ed2-4137-9876-66b070553f8f\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:51044/api/authors/d28888e9-2ba9-473a-a40f-e38cb54f9b35/courses/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "51044",
-					"path": [
-						"api",
-						"authors",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-						"courses",
-						"5b1c2b4d-48c7-402a-80c3-cc796ad49c6b"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PUT Course for Author (no description)",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"title\": \"Updated title\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:51044/api/authors/d28888e9-2ba9-473a-a40f-e38cb54f9b35/courses/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "51044",
-					"path": [
-						"api",
-						"authors",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-						"courses",
-						"5b1c2b4d-48c7-402a-80c3-cc796ad49c6b"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PUT Course for Author (unexisting author)",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"title\": \"Updated title\",\n  \"description\": \"Updated description\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:51044/api/authors/b94975d9-b640-40d4-ac11-9eb2ed1c66dc/courses/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "51044",
-					"path": [
-						"api",
-						"authors",
-						"b94975d9-b640-40d4-ac11-9eb2ed1c66dc",
-						"courses",
-						"5b1c2b4d-48c7-402a-80c3-cc796ad49c6b"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PUT Course for Author (unexisting course)",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"title\" : \"Drinking Games for Lazy Pirates\",\n\t\"description\" : \"The best drinking games for pirates that don't like to move their feet unless strictly necessary.\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:51044/api/authors/d28888e9-2ba9-473a-a40f-e38cb54f9b35/courses/ea6d127c-de97-4ee5-b259-220dc314896c",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "51044",
-					"path": [
-						"api",
-						"authors",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-						"courses",
-						"ea6d127c-de97-4ee5-b259-220dc314896c"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PUT Course for Author (invalid values)",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"title\": null,\n  \"description\": \"Capstan gibbet poop deck smartly knave snow crow's nest tack Corsair doubloon. Dead men tell no tales Barbary Coast coxswain Arr gunwalls walk the plank tackle Gold Road yo-ho-ho lugger. Clipper lass sloop crack Jennys tea cup boatswain Pirate Round fire in the hole yard Gold Road weigh anchor. Draft measured fer yer chains boatswain fore lugsail heave down salmagundi pillage careen keel. Smartly warp run a rig grog dead men tell no tales lanyard loot bilge water coffer pink. Red ensign square-rigged ahoy gunwalls quarter knave doubloon handsomely shrouds reef sails. Belay brigantine galleon rigging nipper wherry lee parrel loaded to the gunwalls carouser. Jack Tar rope's end lee Corsair schooner barkadeer chantey rigging jack cable. No prey, no pay lee Chain Shot ye code of conduct tender Jack Tar topgallant piracy black jack. Hearties measured fer yer chains bowsprit port starboard Pieces of Eight Pirate Round pressgang black jack brig. Crimp salmagundi Brethren of the Coast poop deck coxswain quarterdeck black spot hogshead reef sails Yellow Jack. Brigantine piracy league Privateer run a shot across the bow rum lass Pirate Round Davy Jones' Locker ho. Arr yardarm walk the plank long boat hardtack gangplank bring a spring upon her cable scallywag port mizzen. Ahoy lateen sail Corsair gangplank careen warp rigging chase nipper gaff. Scallywag rutters plunder hail-shot fluke draught yo-ho-ho long clothes maroon reef sails.Capstan gibbet poop deck smartly knave snow crow's nest tack Corsair doubloon. Dead men tell no tales Barbary Coast coxswain Arr gunwalls walk the plank tackle Gold Road yo-ho-ho lugger. Clipper lass sloop crack Jennys tea cup boatswain Pirate Round fire in the hole yard Gold Road weigh anchor. Draft measured fer yer chains boatswain fore lugsail heave down salmagundi pillage careen keel. Smartly warp run a rig grog dead men tell no tales lanyard loot bilge water coffer pink. Red ensign square-rigged ahoy gunwalls quarter knave doubloon handsomely shrouds reef sails. Belay brigantine galleon rigging nipper wherry lee parrel loaded to the gunwalls carouser. Jack Tar rope's end lee Corsair schooner barkadeer chantey rigging jack cable. No prey, no pay lee Chain Shot ye code of conduct tender Jack Tar topgallant piracy black jack. Hearties measured fer yer chains bowsprit port starboard Pieces of Eight Pirate Round pressgang black jack brig. Crimp salmagundi Brethren of the Coast poop deck coxswain quarterdeck black spot hogshead reef sails Yellow Jack. Brigantine piracy league Privateer run a shot across the bow rum lass Pirate Round Davy Jones' Locker ho. Arr yardarm walk the plank long boat hardtack gangplank bring a spring upon her cable scallywag port mizzen. Ahoy lateen sail Corsair gangplank careen warp rigging chase nipper gaff. Scallywag rutters plunder hail-shot fluke draught yo-ho-ho long clothes maroon reef sails.Capstan gibbet poop deck smartly knave snow crow's nest tack Corsair doubloon. Dead men tell no tales Barbary Coast coxswain Arr gunwalls walk the plank tackle Gold Road yo-ho-ho lugger. Clipper lass sloop crack Jennys tea cup boatswain Pirate Round fire in the hole yard Gold Road weigh anchor. Draft measured fer yer chains boatswain fore lugsail heave down salmagundi pillage careen keel. Smartly warp run a rig grog dead men tell no tales lanyard loot bilge water coffer pink. Red ensign square-rigged ahoy gunwalls quarter knave doubloon handsomely shrouds reef sails. Belay brigantine galleon rigging nipper wherry lee parrel loaded to the gunwalls carouser. Jack Tar rope's end lee Corsair schooner barkadeer chantey rigging jack cable. No prey, no pay lee Chain Shot ye code of conduct tender Jack Tar topgallant piracy black jack. Hearties measured fer yer chains bowsprit port starboard Pieces of Eight Pirate Round pressgang black jack brig. Crimp salmagundi Brethren of the Coast poop deck coxswain quarterdeck black spot hogshead reef sails Yellow Jack. Brigantine piracy league Privateer run a shot across the bow rum lass Pirate Round Davy Jones' Locker ho. Arr yardarm walk the plank long boat hardtack gangplank bring a spring upon her cable scallywag port mizzen. Ahoy lateen sail Corsair gangplank careen warp rigging chase nipper gaff. Scallywag rutters plunder hail-shot fluke draught yo-ho-ho long clothes maroon reef sails.\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:51044/api/authors/d28888e9-2ba9-473a-a40f-e38cb54f9b35/courses/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "51044",
-					"path": [
-						"api",
-						"authors",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-						"courses",
-						"5b1c2b4d-48c7-402a-80c3-cc796ad49c6b"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PUT Course for Author (null description)",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"title\": \"Updated title\",\n  \"description\": null\n}"
-				},
-				"url": {
-					"raw": "http://localhost:51044/api/authors/d28888e9-2ba9-473a-a40f-e38cb54f9b35/courses/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "51044",
-					"path": [
-						"api",
-						"authors",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-						"courses",
-						"5b1c2b4d-48c7-402a-80c3-cc796ad49c6b"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PUT Course for Author (null title == null description)",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"title\" : null,\n  \"description\" : null\n}"
-				},
-				"url": {
-					"raw": "http://localhost:51044/api/authors/d28888e9-2ba9-473a-a40f-e38cb54f9b35/courses/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "51044",
-					"path": [
-						"api",
-						"authors",
-						"d28888e9-2ba9-473a-a40f-e38cb54f9b35",
-						"courses",
-						"5b1c2b4d-48c7-402a-80c3-cc796ad49c6b"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "PATCH Clientes",
 			"request": {
 				"method": "PATCH",
@@ -991,12 +703,12 @@
 					"raw": "[\n    {\n      \"op\": \"replace\",\n      \"path\": \"/nomecompleto\",\n      \"value\": \"Nome Atualizado\"\n    }\n]"
 				},
 				"url": {
-					"raw": "http://localhost:2467/api/clientes/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/clientes/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"clientes",
@@ -1025,12 +737,12 @@
 					"raw": "[\n    {\n      \"op\": \"replace\",\n      \"path\": \"/nomecompleto\",\n      \"value\": \"Outro Nome Alterado\"\n    },\n    {\n      \"op\": \"replace\",\n      \"path\": \"/sexo\",\n      \"value\": \"F\"\n    }\n]"
 				},
 				"url": {
-					"raw": "http://localhost:2467/api/clientes/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/clientes/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"clientes",
@@ -1059,12 +771,12 @@
 					"raw": "[\n    {\n      \"op\": \"remove\",\n      \"path\": \"/nomecompleto\"\n    }\n]"
 				},
 				"url": {
-					"raw": "http://localhost:2467/api/clientes/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/clientes/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"clientes",
@@ -1093,12 +805,12 @@
 					"raw": "[\n    {\n      \"op\": \"add\",\n      \"path\": \"/nomecompleto\",\n      \"value\": \"Novo nome\"\n    },\n    {\n      \"op\": \"copy\",\n      \"from\": \"/sexo\",\n      \"path\": \"/nomecompleto\"\n    }\n]"
 				},
 				"url": {
-					"raw": "http://localhost:24/api/clientes/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/clientes/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "24",
+					"port": "44302",
 					"path": [
 						"api",
 						"clientes",
@@ -1127,12 +839,12 @@
 					"raw": "[\n    {\n      \"op\": \"replace\",\n      \"path\": \"/title\",\n      \"value\": \"Updated title\"\n    },\n    {\n      \"op\": \"replace\",\n      \"path\": \"/description\",\n      \"value\": \"Updated description\"\n    }\n]"
 				},
 				"url": {
-					"raw": "http://localhost:2467/api/clientes/ea6d127c-de97-4ee5-b259-220dc314896c",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/clientes/ea6d127c-de97-4ee5-b259-220dc314896c",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"clientes",
@@ -1161,12 +873,12 @@
 					"raw": "[\n    {\n      \"op\": \"remove\",\n      \"path\": \"/sexo\"\n    }\n]"
 				},
 				"url": {
-					"raw": "http://localhost:51044/api/clientes/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/clientes/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "51044",
+					"port": "44302",
 					"path": [
 						"api",
 						"clientes",
@@ -1195,84 +907,16 @@
 					"raw": "[\n    {\n      \"op\": \"remove\",\n      \"path\": \"/issonaoexiste\"\n    }\n]"
 				},
 				"url": {
-					"raw": "http://localhost:2467/api/clientes/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/clientes/5b1c2b4d-48c7-402a-80c3-cc796ad49c6b",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"clientes",
 						"5b1c2b4d-48c7-402a-80c3-cc796ad49c6b"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PATCH Cliente (UPSERT - no title)",
-			"request": {
-				"method": "PATCH",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json-patch+json"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "[\n    {\n      \"op\": \"replace\",\n      \"path\": \"/nomecompleto\",\n      \"value\": \"Rafael Vieira Suarez ATUALIZADO\"\n    }\n]"
-				},
-				"url": {
-					"raw": "http://localhost:2467/api/clientes/75bf303e-6dc4-4b00-81fd-f896a6379f5f",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "2467",
-					"path": [
-						"api",
-						"clientes",
-						"75bf303e-6dc4-4b00-81fd-f896a6379f5f"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PATCH Cliente (UPSERT - remove unexisting property)",
-			"request": {
-				"method": "PATCH",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json-patch+json"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "[\n    {\n      \"op\": \"add\",\n      \"path\": \"/issonaoeiste\",\n      \"value\": \"novo valor\"\n    }\n]"
-				},
-				"url": {
-					"raw": "http://localhost:2467/api/clientes/75bf303e-6dc4-4b00-81fd-f896a6379f5f",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "2467",
-					"path": [
-						"api",
-						"clientes",
-						"75bf303e-6dc4-4b00-81fd-f896a6379f5f"
 					]
 				}
 			},
