@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.IO;
 using System.Reflection;
@@ -52,6 +53,9 @@ namespace Cidades.API
                 setupAction.ReturnHttpNotAcceptable = true;
 
             }).AddXmlDataContractSerializerFormatters()
+            .AddNewtonsoftJson(setupAction => {
+                setupAction.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            })
             .ConfigureApiBehaviorOptions(setupAction =>
             {
                 setupAction.InvalidModelStateResponseFactory = context =>
