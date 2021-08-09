@@ -71,8 +71,8 @@ namespace Cidades.API
                     var actionExecutingContext =
                           context as Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext;
 
-                    // se o model state esta com e 
-                    // lidando com eerro de validação
+                    // se o model state esta sem erro 
+                    // lidando com erro de validação
                     if ((context.ModelState.ErrorCount > 0) &&
                         (actionExecutingContext?.ActionArguments.Count == context.ActionDescriptor.Parameters.Count))
                     {
