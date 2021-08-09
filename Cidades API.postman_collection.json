@@ -932,12 +932,12 @@
 					"formdata": []
 				},
 				"url": {
-					"raw": "http://localhost:2467/api/clientes/d8663e5e-7494-4f81-8739-6e0de1bea7ee",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/clientes/d8663e5e-7494-4f81-8739-6e0de1bea7ee",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"clientes",
@@ -957,12 +957,12 @@
 					"formdata": []
 				},
 				"url": {
-					"raw": "http://localhost:2467/api/clientes/3f946dbe-edf3-4c44-baef-b683bc355a0f",
-					"protocol": "http",
+					"raw": "https://localhost:44302/api/clientes/3f946dbe-edf3-4c44-baef-b683bc355a0f",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "2467",
+					"port": "44302",
 					"path": [
 						"api",
 						"clientes",
