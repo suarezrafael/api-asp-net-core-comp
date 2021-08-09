@@ -62,4 +62,8 @@ Usei [GitKraken](https://www.gitkraken.com/git-client) para controle de versão.
 
 ## 🎁 Expressões de gratidão
 
-* Teste importante para selecionar e elucidar o desenvolvedor qual nível ele se encontra para conhecer melhor as habilidades técnicas . Muito obrigado compasso 📢
+* Teste importante para selecionar e elucidar o desenvolvedor qual nível ele se encontra para conhecer melhor as habilidades técnicas.
+Obs.: Estou focado a iniciar o aprendizado sobre o modelo de arquitetura de microserviço. 
+Entrei no grupo de toolbox para aprender docker também. Creio que até este desafio não irei utilizar tais conceitos e ferramenta e confiar no que já tenho consolidado.
+
+Muito obrigado compasso 📢
