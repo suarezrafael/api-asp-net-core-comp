@@ -84,22 +84,34 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
    10. GET Cliente (unexisting Cliente)
       - Consulta de Cidade por ID usando um ID inexistente
       - Headers:
-   11. 
-      - Descrição
+   11. HEAD Cidades
+      - Consulta o cabeçalho da requisição
       - Headers:
-   12. HEAD Cidades
-      - Descrição
+   12. GET Filtered Cidades Por Nome
+      - Consulta lista Cidades filtrando por Nome
+      - Params: Nome=Alegrete
+   13. GET Filtered Cidades Por Estado
+      - Consulta lista de Cidades filtrando por Nome
+      - Params: Estado=RS
+   14. GET Filtered Cidades Por Nome e Estado
+      - Consulta lista de Cidades filtrando por Nome e Estado
+      - Params: ?Nome=Alegrete&Estado=RS
+   15. GET Filtered Clientes Por Nome
+      - Consulta lista de Clientes filtrando por NomeCompleto
+      - Params: NomeCompleto=Rafael
+   11. POST Cidade
+      - Consulta o cabeçalho da requisição
       - Headers:
-   13. GET Filtered Cidades Por Nome
-      - Descrição
-      - Headers:
-   10. GET Filtered Cidades Por Estado
-      - Descrição
-      - Headers:
-   10. GET Filtered Cidades Por Nome e Estado
-      - Descrição
-      - Headers:
-
+	    - KEY: Content-Type VALUE: application/json
+		- KEY: Accept VALUE: application/json
+		- Body
+          ```json
+		  {
+			"Nome" : "Cachoeira do Sul",
+			"Estado" : "RS"
+	      }
+          ```
+		  
 ## 📌 Versão
 
 Usei [GitKraken](https://www.gitkraken.com/git-client) para controle de versão. Para as versões disponíveis, observe as [tags neste repositório](https://github.com/suarezrafael/api-asp-net-core-compasso/tags). 
