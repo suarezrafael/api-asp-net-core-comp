@@ -2,14 +2,14 @@
 
 Desafio API REST p/ cadastrar:
 
-- (OK) Cadastrar cidade 
-- (OK) Cadastrar cliente 
-- (OK) Consultar cidade pelo nome 
-- (OK) Consultar cidade pelo estado 
-- (OK) Consultar cliente pelo nome
-- (OK) Consultar cliente pelo Id
-- (OK) Remover cliente
-- (OK) Alterar o nome do cliente - Foi corrigida a instalação do ASpnetCore.Mvc.NewtonsoftJson 
+- [x] Cadastrar cidade 
+- [x] Cadastrar cliente 
+- [x] Consultar cidade pelo nome 
+- [x] Consultar cidade pelo estado 
+- [x] Consultar cliente pelo nome
+- [x] Consultar cliente pelo Id
+- [x] Remover cliente
+- [x] Alterar o nome do cliente - Foi corrigida a instalação do ASpnetCore.Mvc.NewtonsoftJson 
 
 - Considere o cadastro com dados básicos:
  - Cidades: nome e estado
@@ -27,9 +27,9 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 
 ### 🔧 Instalação
 
-- Instalar Visual Studio 2019
-- Instalar Carga de Trabalho Aplicações Web em .NET Core
-- Instalar POSTMAN
+- Instalar [VisualStudio 2019 Community](https://visualstudio.microsoft.com/pt-br/thank-you-downloading-visual-studio/?sku=Community&rel=16) 
+- Instalar Carga de Trabalho no Visual Studio Aplicações Web em .NET Core
+- Instalar [POSTMAN Cliente](https://www.postman.com/downloads/)
 
 ## 🛠️ Construído com
 
@@ -38,7 +38,7 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
  - POSTMAN para testar
  
 * [VisualStudio 2019 Community](https://visualstudio.microsoft.com/pt-br/thank-you-downloading-visual-studio/?sku=Community&rel=16) -IDE
-* [POSTMAN Cliente](https://www.postman.com/downloads/) - Platform for API Development
+* [POSTMAN Cliente](https://dl.pstmn.io/download/latest/win64) - Platform for API Development
 * [GitKraken](https://www.gitkraken.com/git-client) - maneira mais fácil, segura e poderosa para aproveitar o Git
 
 
@@ -47,10 +47,56 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 
 - Clone o repositório https://github.com/suarezrafael/api-asp-net-core-compasso.git
 - Abra o arquivo CidadesAPI.sln com o visual Studio 2019.
-- Aguarde a Inicialização do aplicativo. Quando o programa estiver pronto e rodando o navegador irá exibir a página https://localhost:<porta>/swagger/index.html 🤓.
-- Para acessar os exemplos em json. Abra o programa POSTMAN. Importe para o POSTMAN o arquivo Cidades API.postman_collection.json.
-- Execute as requisições HTTP cadastradas.
+- Aguarde a Inicialização do aplicativo. Quando o programa estiver pronto e rodando o navegador irá exibir a página https://localhost:44302/swagger/index.html 🤓.
+- Para acessar os exemplos em json. Abra o programa POSTMAN. Importe para o POSTMAN o arquivo de coleção Cidades API.postman_collection.json.
+- Execute as requisições HTTP cadastradas. 
 - Voce pode executar as requisições tanto no POSTMAN como na própria página do swagger.
+- Abaixo a Descrição detalhada da coleção POSTMAN CidadesAPI
+   1. GET Cidades 
+      - Consulta todas cidades para elucidar que dados estão pré-gravados no BD
+      - Headers: Accept application/json
+   2. GET Cidades hateoas
+      - Teste de GET usando application/vnd.marvin.hateoas+json
+      - Headers: Accept application/vnd.marvin.hateoas+json
+   3. GET Cidades
+      - Descrição
+      - Headers:
+   4. GET Cidade (unexisting)
+      - Descrição
+      - Headers:
+   5. GET Cidade (Accept: application/json)
+      - Descrição
+      - Headers:
+   6. GET Cidade (Accept: application/xml)
+      - Descrição
+      - Headers:
+   7. GET Clientes
+      - Descrição
+      - Headers:
+   8. GET Cliente hateoas
+      - Descrição
+      - Headers:
+   9. GET Cliente (Accept: application/json)
+      - Descrição
+      - Headers:
+   10. GET Cliente (Accept: application/xml)
+      - Descrição
+      - Headers:
+   11. GET Cliente (unexisting Cliente)
+      - Descrição
+      - Headers:
+   12. HEAD Cidades
+      - Descrição
+      - Headers:
+   13. GET Filtered Cidades Por Nome
+      - Descrição
+      - Headers:
+   10. GET Filtered Cidades Por Estado
+      - Descrição
+      - Headers:
+   10. GET Filtered Cidades Por Nome e Estado
+      - Descrição
+      - Headers:
 
 ## 📌 Versão
 
