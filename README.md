@@ -12,8 +12,8 @@ Desafio API REST p/ cadastrar:
 - [x] Alterar o nome do cliente - Foi corrigida a instalação do ASpnetCore.Mvc.NewtonsoftJson 
 
 - Considere o cadastro com dados básicos:
- - Cidades: nome e estado
- - Cliente: nome completo, sexo, data de nascimento, idade e cidade onde mora.
+  - Cidades: nome e estado
+  - Cliente: nome completo, sexo, data de nascimento, idade e cidade onde mora.
 
 ## 🚀 Começando
 
