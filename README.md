@@ -51,8 +51,9 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 - Para acessar os exemplos em json. Abra o programa POSTMAN. Importe para o POSTMAN o arquivo de coleção Cidades API.postman_collection.json.
 - Execute as requisições HTTP cadastradas. 
 - Voce pode executar as requisições tanto no POSTMAN como na própria página do swagger.
-- Abaixo a Descrição detalhada da coleção CidadesAPI
-  - Teste
+1. Abaixo a Descrição detalhada da coleção POSTMAN CidadesAPI
+   - Primeiro item de lista aninhado
+     - Segundo item de lista aninhada
 
 ## 📌 Versão
 
