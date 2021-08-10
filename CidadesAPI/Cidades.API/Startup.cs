@@ -42,7 +42,8 @@ namespace Cidades.API
                     {
                         Name = "Rafael Vieira Suarez",
                         Email = "rafael.suarez@compasso.com.br",
-                        Url = new Uri("https://about.me/rafael.suarez"),
+                        Url = new Uri("https://about.me/rafael.suarez")
+                        
                     }
                 });
 
@@ -149,7 +150,7 @@ namespace Cidades.API
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("../swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
             
             app.UseRouting();
