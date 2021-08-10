@@ -51,9 +51,52 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 - Para acessar os exemplos em json. Abra o programa POSTMAN. Importe para o POSTMAN o arquivo de coleção Cidades API.postman_collection.json.
 - Execute as requisições HTTP cadastradas. 
 - Voce pode executar as requisições tanto no POSTMAN como na própria página do swagger.
-1. Abaixo a Descrição detalhada da coleção POSTMAN CidadesAPI
-   - Primeiro item de lista aninhado
-     - Segundo item de lista aninhada
+- Abaixo a Descrição detalhada da coleção POSTMAN CidadesAPI
+   1. GET Cidades 
+      - Consulta todas cidades para elucidar que dados estão pré-gravados no BD
+      - Headers: Accept application/json
+   2. GET Cidades hateoas
+      - Teste de GET usando application/vnd.marvin.hateoas+json
+      - Headers: Accept application/vnd.marvin.hateoas+json
+   3. GET Cidades
+      - Descrição
+      - Headers:
+   4. GET Cidade (unexisting)
+      - Descrição
+      - Headers:
+   5. GET Cidade (Accept: application/json)
+      - Descrição
+      - Headers:
+   6. GET Cidade (Accept: application/xml)
+      - Descrição
+      - Headers:
+   7. GET Clientes
+      - Descrição
+      - Headers:
+   8. GET Cliente hateoas
+      - Descrição
+      - Headers:
+   9. GET Cliente (Accept: application/json)
+      - Descrição
+      - Headers:
+   10. GET Cliente (Accept: application/xml)
+      - Descrição
+      - Headers:
+   11. GET Cliente (unexisting Cliente)
+      - Descrição
+      - Headers:
+   12. HEAD Cidades
+      - Descrição
+      - Headers:
+   13. GET Filtered Cidades Por Nome
+      - Descrição
+      - Headers:
+   10. GET Filtered Cidades Por Estado
+      - Descrição
+      - Headers:
+   10. GET Filtered Cidades Por Nome e Estado
+      - Descrição
+      - Headers:
 
 ## 📌 Versão
 
