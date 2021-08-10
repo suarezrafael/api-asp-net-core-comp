@@ -3,13 +3,13 @@
 Desafio API REST p/ cadastrar:
 
 - [x] Cadastrar cidade 
-- (OK) Cadastrar cliente 
-- (OK) Consultar cidade pelo nome 
-- (OK) Consultar cidade pelo estado 
-- (OK) Consultar cliente pelo nome
-- (OK) Consultar cliente pelo Id
-- (OK) Remover cliente
-- (OK) Alterar o nome do cliente - Foi corrigida a instalação do ASpnetCore.Mvc.NewtonsoftJson 
+- [x] Cadastrar cliente 
+- [x] Consultar cidade pelo nome 
+- [x] Consultar cidade pelo estado 
+- [x] Consultar cliente pelo nome
+- [x] Consultar cliente pelo Id
+- [x] Remover cliente
+- [x] Alterar o nome do cliente - Foi corrigida a instalação do ASpnetCore.Mvc.NewtonsoftJson 
 
 - Considere o cadastro com dados básicos:
  - Cidades: nome e estado
@@ -38,7 +38,7 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
  - POSTMAN para testar
  
 * [VisualStudio 2019 Community](https://visualstudio.microsoft.com/pt-br/thank-you-downloading-visual-studio/?sku=Community&rel=16) -IDE
-* [POSTMAN Cliente](https://www.postman.com/downloads/) - Platform for API Development
+* [POSTMAN Cliente](https://dl.pstmn.io/download/latest/win64) - Platform for API Development
 * [GitKraken](https://www.gitkraken.com/git-client) - maneira mais fácil, segura e poderosa para aproveitar o Git
 
 
