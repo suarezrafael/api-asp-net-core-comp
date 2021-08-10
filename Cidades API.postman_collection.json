@@ -468,7 +468,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"firstName\" : \"Jane\",\n\t\"lastName\" : \"Skewers\",\n\t\"dateOfBirth\" : \"invalid value for DateTimeOffset\",\n\t\"mainCategory\": \"Rum\"\n}"
+					"raw": "{\n\t\"Nome\" : \"Cachoeira do Sul\",\n\t\"Estado\" : \"Valor invalido para o Estado\"\n}"
 				},
 				"url": {
 					"raw": "https://localhost:44302/api/cidades",
@@ -480,39 +480,6 @@
 					"path": [
 						"api",
 						"cidades"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "POST Cliente",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"nomeCompleto\" : \"Maria de Lurdes\",\n\t\"sexo\" : \"F\",\n    \"dataDeNascimento\" : \"1968-03-04T00:00:00\",\n    \"cidadeId\" : \"d28888e9-2ba9-473a-a40f-e38cb54f9b35\"\n}"
-				},
-				"url": {
-					"raw": "https://localhost:44302/api/clientes",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "44302",
-					"path": [
-						"api",
-						"clientes"
 					]
 				}
 			},
@@ -547,6 +514,39 @@
 						"api",
 						"cidades",
 						"25141d83-4584-4487-a306-0441695d8e24"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Cliente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nomeCompleto\" : \"Maria de Lurdes\",\n\t\"sexo\" : \"F\",\n    \"dataDeNascimento\" : \"1968-03-04T00:00:00\",\n    \"cidadeId\" : \"d28888e9-2ba9-473a-a40f-e38cb54f9b35\"\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44302/api/clientes",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44302",
+					"path": [
+						"api",
+						"clientes"
 					]
 				}
 			},
@@ -836,7 +836,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n    {\n      \"op\": \"replace\",\n      \"path\": \"/title\",\n      \"value\": \"Updated title\"\n    },\n    {\n      \"op\": \"replace\",\n      \"path\": \"/description\",\n      \"value\": \"Updated description\"\n    }\n]"
+					"raw": "[\n    {\n\t\t\"op\": \"add\",\n\t\t\"path\": \"/nomecompleto\",\n\t\t\"value\": \"Novo nome\"\n    },\n    {\n\t\t\"op\": \"copy\",\n\t\t\"from\": \"/sexo\",\n\t\t\"path\": \"/nomecompleto\"\n    }\n]"
 				},
 				"url": {
 					"raw": "https://localhost:44302/api/clientes/ea6d127c-de97-4ee5-b259-220dc314896c",
