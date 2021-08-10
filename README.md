@@ -58,31 +58,33 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
    2. GET Cidades hateoas
       - Teste de GET usando application/vnd.marvin.hateoas+json
       - Headers: Accept application/vnd.marvin.hateoas+json
-   3. GET Cidades
-      - Descrição
+   3. GET Cidade (unexisting)
+      - Consulta de Cidade por ID usando um ID inexistente
       - Headers:
-   4. GET Cidade (unexisting)
-      - Descrição
+   4. GET Cidade (Accept: application/json)
+      - Consulta de Cidade por ID com JSON result
+      - Headers: Accept application/json
+   5. GET Cidade (Accept: application/xml)
+      - Consulta de Cidade por ID com XML result
+      - Headers: Accept application/xml
+	  
+   6. GET Clientes
+      - Consulta todos os clientes para elucidar que dados estão pré-gravados no BD
       - Headers:
-   5. GET Cidade (Accept: application/json)
-      - Descrição
+   7. GET Cliente hateoas
+      - Teste de GET usando application/vnd.marvin.hateoas+json
+      - Headers: Accept application/vnd.marvin.hateoas+json
+	  
+   8. GET Cliente (Accept: application/json)
+      - Consulta de Cliente por ID com JSON result
+      - Headers: Accept application/json
+   9. GET Cliente (Accept: application/xml)
+      - Consulta de Cliente por ID com XML result
+      - Headers: Accept application/xml
+   10. GET Cliente (unexisting Cliente)
+      - Consulta de Cidade por ID usando um ID inexistente
       - Headers:
-   6. GET Cidade (Accept: application/xml)
-      - Descrição
-      - Headers:
-   7. GET Clientes
-      - Descrição
-      - Headers:
-   8. GET Cliente hateoas
-      - Descrição
-      - Headers:
-   9. GET Cliente (Accept: application/json)
-      - Descrição
-      - Headers:
-   10. GET Cliente (Accept: application/xml)
-      - Descrição
-      - Headers:
-   11. GET Cliente (unexisting Cliente)
+   11. 
       - Descrição
       - Headers:
    12. HEAD Cidades
