@@ -2,7 +2,7 @@
 
 Desafio API REST p/ cadastrar:
 
-- (OK) Cadastrar cidade 
+- [x] Cadastrar cidade 
 - (OK) Cadastrar cliente 
 - (OK) Consultar cidade pelo nome 
 - (OK) Consultar cidade pelo estado 
@@ -27,9 +27,9 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 
 ### 🔧 Instalação
 
-- Instalar Visual Studio 2019
-- Instalar Carga de Trabalho Aplicações Web em .NET Core
-- Instalar POSTMAN
+- Instalar [VisualStudio 2019 Community](https://visualstudio.microsoft.com/pt-br/thank-you-downloading-visual-studio/?sku=Community&rel=16) 
+- Instalar Carga de Trabalho no Visual Studio Aplicações Web em .NET Core
+- Instalar [POSTMAN Cliente](https://www.postman.com/downloads/)
 
 ## 🛠️ Construído com
 
@@ -47,10 +47,12 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 
 - Clone o repositório https://github.com/suarezrafael/api-asp-net-core-compasso.git
 - Abra o arquivo CidadesAPI.sln com o visual Studio 2019.
-- Aguarde a Inicialização do aplicativo. Quando o programa estiver pronto e rodando o navegador irá exibir a página https://localhost:<porta>/swagger/index.html 🤓.
-- Para acessar os exemplos em json. Abra o programa POSTMAN. Importe para o POSTMAN o arquivo Cidades API.postman_collection.json.
-- Execute as requisições HTTP cadastradas.
+- Aguarde a Inicialização do aplicativo. Quando o programa estiver pronto e rodando o navegador irá exibir a página https://localhost:44302/swagger/index.html 🤓.
+- Para acessar os exemplos em json. Abra o programa POSTMAN. Importe para o POSTMAN o arquivo de coleção Cidades API.postman_collection.json.
+- Execute as requisições HTTP cadastradas. 
 - Voce pode executar as requisições tanto no POSTMAN como na própria página do swagger.
+- Abaixo a Descrição detalhada da coleção CidadesAPI
+-- Teste
 
 ## 📌 Versão
 
