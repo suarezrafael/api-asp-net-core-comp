@@ -111,6 +111,7 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 			"Estado" : "RS"
 	      }
           ```
+   12. Teste Readme.md
 		  
 ## 📌 Versão
 
