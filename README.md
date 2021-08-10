@@ -52,7 +52,7 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 - Execute as requisições HTTP cadastradas. 
 - Voce pode executar as requisições tanto no POSTMAN como na própria página do swagger.
 - Abaixo a Descrição detalhada da coleção CidadesAPI
--- Teste
+  - Teste
 
 ## 📌 Versão
 
