@@ -366,7 +366,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:44302/api/cidades?NomeCompleto=Rafael",
+					"raw": "https://localhost:44302/api/clientes?NomeCompleto=Rafael",
 					"protocol": "https",
 					"host": [
 						"localhost"
@@ -374,7 +374,7 @@
 					"port": "44302",
 					"path": [
 						"api",
-						"cidades"
+						"clientes"
 					],
 					"query": [
 						{
