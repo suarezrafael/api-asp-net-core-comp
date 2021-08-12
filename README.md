@@ -41,8 +41,9 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 * [POSTMAN Cliente](https://dl.pstmn.io/download/latest/win64) - Platform for API Development
 * [GitKraken](https://www.gitkraken.com/git-client) - maneira mais fácil, segura e poderosa para aproveitar o Git
 
-## 📷 Imagens do projeto rodando
+## 📷 Wiki e imagens do projeto rodando
 
+- Acesse aqui a Wiki do projeto[Wiki](https://github.com/suarezrafael/api-asp-net-core-compasso/wiki)
 - Imagens da aplicação rodando [Prints Swagger](https://github.com/suarezrafael/api-asp-net-core-compasso/wiki/Imagens-da-aplica%C3%A7%C3%A3o-rodando )
 
 
