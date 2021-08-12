@@ -46,7 +46,7 @@ namespace Cidades.API
                         
                     }
                 });
-
+                
             });
 
             services.AddControllers(setupAction =>
